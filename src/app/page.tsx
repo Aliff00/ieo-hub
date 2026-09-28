@@ -8,7 +8,6 @@ import {
   TrendingUp, 
   ArrowRight, 
   ShieldCheck, 
-  Sparkles,
   ChevronDown
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -66,11 +65,6 @@ export default function HomePage() {
         <div className="hidden md:block h-2" />
 
         <div className="container max-w-5xl mx-auto space-y-6 sm:space-y-8 relative my-auto">
-          <div className="inline-flex items-center space-x-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1.5 text-xs font-medium text-blue-400 backdrop-blur">
-            <Sparkles className="h-3.5 w-3.5" />
-            <span>Unified Digital Operating System for Enterprise Innovation</span>
-          </div>
-
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.12]">
             Connect Talent, Technology Assets, and Partners Through{" "}
             <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
