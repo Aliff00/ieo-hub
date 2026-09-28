@@ -12,10 +12,10 @@ import {
   Building2, 
   SlidersHorizontal 
 } from "lucide-react";
-import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useRole, UserRole } from "@/contexts/role-context";
+import { ThemeToggle } from "@/components/shared/theme-toggle";
 
 export function Topbar() {
   const { activeRole, setActiveRole, currentProfile } = useRole();
@@ -50,18 +50,18 @@ export function Topbar() {
       </div>
 
       {/* Center/Right: Role Switcher & Profile */}
-      <div className="flex items-center space-x-2 sm:space-x-3">
+      <div className="flex items-center space-x-3 sm:space-x-4">
         {/* Interactive Role Switcher for Testing/Demonstrating RBAC */}
-        <div className="hidden lg:flex items-center space-x-1 p-1 rounded-xl bg-card border border-border text-xs">
+        <div className="hidden lg:flex items-center space-x-1.5 p-1 rounded-xl bg-card border border-border/70 text-xs">
           <span className="text-[11px] font-semibold text-muted-foreground px-2 flex items-center">
             <SlidersHorizontal className="h-3 w-3 mr-1 text-primary" /> Active Persona:
           </span>
           {(["INNOVATOR", "PARTNER", "ADMIN"] as UserRole[]).map((r) => {
             const isActive = activeRole === r;
             const labels = {
-              INNOVATOR: "Innovator",
-              PARTNER: "Partner",
-              ADMIN: "Admin",
+              INNOVATOR: "🔬 Innovator",
+              PARTNER: "🤝 Partner",
+              ADMIN: "⚙️ Admin",
             };
             return (
               <button
@@ -70,7 +70,7 @@ export function Topbar() {
                 className={`px-2.5 py-1 rounded-lg font-medium text-xs transition-all ${
                   isActive
                     ? "bg-primary text-primary-foreground font-semibold shadow-sm"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                    : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"
                 }`}
               >
                 {labels[r]}
@@ -91,7 +91,7 @@ export function Topbar() {
           </Button>
         </Link>
 
-        {/* Theme Toggle (Light / Dark mode) */}
+        {/* Theme Toggle */}
         <ThemeToggle />
 
         {/* Notifications */}

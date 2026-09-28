@@ -146,7 +146,7 @@ export default function LoginPage() {
         <CardFooter className="flex flex-col space-y-2 text-center text-xs text-muted-foreground border-t border-border/50 pt-4">
           <div>
             Need an enterprise account?{" "}
-            <Link href="/register" className="font-semibold text-primary hover:underline">
+            <Link href="/register" className="font-semibold text-blue-400 hover:underline">
               Request Partner Access
             </Link>
           </div>

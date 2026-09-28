@@ -13,30 +13,46 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>("dark");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const saved = localStorage.getItem("ieo_theme") as Theme | null;
-    if (saved === "dark" || saved === "light") {
-      setTheme(saved);
-      document.documentElement.classList.toggle("dark", saved === "dark");
-    } else {
-      // Default to Light Mode
-      setTheme("light");
-      document.documentElement.classList.remove("dark");
+    try {
+      const saved = localStorage.getItem("ieo_theme") as Theme | null;
+      if (saved === "light" || saved === "dark") {
+        setTheme(saved);
+        if (saved === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      } else {
+        // Default to dark theme as base
+        setTheme("dark");
+        document.documentElement.classList.add("dark");
+      }
+    } catch {
+      // Fallback
     }
   }, []);
 
   const changeTheme = (newTheme: Theme) => {
     setTheme(newTheme);
-    localStorage.setItem("ieo_theme", newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
+    try {
+      localStorage.setItem("ieo_theme", newTheme);
+      if (newTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    } catch {
+      // Ignore localStorage errors
+    }
   };
 
   const toggleTheme = () => {
-    changeTheme(theme === "light" ? "dark" : "light");
+    changeTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
