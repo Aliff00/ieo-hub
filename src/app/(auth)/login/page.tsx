@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { signIn } from "next-auth/react";
-import { Layers, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -28,10 +29,17 @@ export default function LoginPage() {
     <div className="container flex min-h-screen max-w-md items-center justify-center py-12 px-4 mx-auto">
       <Card className="w-full border-border/80 bg-card/80 backdrop-blur shadow-xl">
         <CardHeader className="space-y-1 text-center">
-          <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white shadow-md">
-            <Layers className="h-5 w-5" />
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-white p-2 shadow-lg border border-border/40 overflow-hidden">
+            <Image
+              src="/logo.svg"
+              alt="IEO Hub Logo"
+              width={56}
+              height={56}
+              className="object-contain w-full h-full"
+              priority
+            />
           </div>
-          <CardTitle className="text-2xl font-bold tracking-tight mt-2">
+          <CardTitle className="text-2xl font-bold tracking-tight mt-3">
             IEO Hub Platform
           </CardTitle>
           <CardDescription className="text-xs">

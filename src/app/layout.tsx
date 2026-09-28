@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   title: "IEO Hub | Innovation, Ecosystem, and Orchestration Platform",
   description:
     "Unified digital operating system connecting talent, technology assets, and enterprise partners through structured innovation lifecycles.",
+  icons: {
+    icon: "/logo.svg",
+    shortcut: "/logo.svg",
+    apple: "/logo.svg",
+  },
 };
 
 export default function RootLayout({

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { 
   LayoutDashboard, 
@@ -9,7 +10,6 @@ import {
   GitBranch, 
   TrendingUp, 
   Settings, 
-  Layers,
   ArrowUpRight
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -29,9 +29,17 @@ export function Sidebar() {
   return (
     <aside className="w-64 border-r border-border bg-card/60 flex flex-col h-[calc(100vh-4rem)] sticky top-16 select-none">
       <div className="p-4 border-b border-border/40">
-        <div className="flex items-center space-x-2 px-2 py-1.5 rounded-lg bg-primary/10 text-primary border border-primary/20">
-          <Layers className="h-4 w-4" />
-          <div className="text-xs font-semibold">Orchestration OS v2.4</div>
+        <div className="flex items-center space-x-2.5 px-2.5 py-1.5 rounded-lg bg-card/90 text-foreground border border-border/60 shadow-sm">
+          <div className="relative h-5 w-5 rounded bg-white p-0.5 flex items-center justify-center overflow-hidden shrink-0">
+            <Image
+              src="/logo.svg"
+              alt="IEO Logo"
+              width={20}
+              height={20}
+              className="object-contain w-full h-full"
+            />
+          </div>
+          <div className="text-xs font-semibold">Orchestration OS <span className="text-[10px] text-blue-400 font-normal">v2.4</span></div>
         </div>
       </div>
 

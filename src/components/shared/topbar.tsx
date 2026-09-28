@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Bell, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -9,9 +10,16 @@ export function Topbar() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur px-6 h-16 flex items-center justify-between">
       <div className="flex items-center space-x-4">
-        <Link href="/" className="flex items-center space-x-2">
-          <div className="h-8 w-8 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow">
-            IEO
+        <Link href="/" className="flex items-center space-x-3 group">
+          <div className="relative h-9 w-9 rounded-lg bg-white p-1 flex items-center justify-center shadow-sm border border-border/40 overflow-hidden group-hover:scale-105 transition-transform">
+            <Image
+              src="/logo.svg"
+              alt="IEO Hub Logo"
+              width={36}
+              height={36}
+              className="object-contain w-full h-full"
+              priority
+            />
           </div>
           <div>
             <span className="font-bold text-base text-foreground tracking-tight">IEO Hub</span>
