@@ -31,7 +31,7 @@ export default function LoginPage() {
         <CardHeader className="space-y-1 text-center">
           <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-white p-2 shadow-lg border border-border/40 overflow-hidden">
             <Image
-              src="/logo.svg"
+              src="/logo.jpg"
               alt="IEO Hub Logo"
               width={56}
               height={56}

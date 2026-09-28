@@ -7,9 +7,9 @@ export const metadata: Metadata = {
   description:
     "Unified digital operating system connecting talent, technology assets, and enterprise partners through structured innovation lifecycles.",
   icons: {
-    icon: "/logo.svg",
-    shortcut: "/logo.svg",
-    apple: "/logo.svg",
+    icon: "/logo.jpg",
+    shortcut: "/logo.jpg",
+    apple: "/logo.jpg",
   },
 };
 

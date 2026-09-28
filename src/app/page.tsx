@@ -21,7 +21,7 @@ export default function HomePage() {
         <div className="flex items-center space-x-3">
           <div className="relative h-10 w-10 rounded-xl bg-white p-1.5 flex items-center justify-center shadow-md border border-border/40 overflow-hidden">
             <Image
-              src="/logo.svg"
+              src="/logo.jpg"
               alt="IEO Hub Logo"
               width={40}
               height={40}

@@ -32,7 +32,7 @@ export function Sidebar() {
         <div className="flex items-center space-x-2.5 px-2.5 py-1.5 rounded-lg bg-card/90 text-foreground border border-border/60 shadow-sm">
           <div className="relative h-5 w-5 rounded bg-white p-0.5 flex items-center justify-center overflow-hidden shrink-0">
             <Image
-              src="/logo.svg"
+              src="/logo.jpg"
               alt="IEO Logo"
               width={20}
               height={20}

@@ -13,7 +13,7 @@ export function Topbar() {
         <Link href="/" className="flex items-center space-x-3 group">
           <div className="relative h-9 w-9 rounded-lg bg-white p-1 flex items-center justify-center shadow-sm border border-border/40 overflow-hidden group-hover:scale-105 transition-transform">
             <Image
-              src="/logo.svg"
+              src="/logo.jpg"
               alt="IEO Hub Logo"
               width={36}
               height={36}
