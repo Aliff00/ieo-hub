@@ -13,11 +13,26 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         if (!credentials?.email) return null;
+        const email = credentials.email.toLowerCase();
+        let role = "PARTNER";
+        let name = "Dr. Alex Danvers";
+        let id = "usr_partner_1";
+
+        if (email.includes("innovator")) {
+          role = "INNOVATOR";
+          name = "Dr. Jordan Hayes";
+          id = "usr_innovator_1";
+        } else if (email.includes("admin")) {
+          role = "ADMIN";
+          name = "Sarah Lin";
+          id = "usr_admin_1";
+        }
+
         return {
-          id: "usr_partner_1",
-          name: "Dr. Alex Danvers",
+          id,
+          name,
           email: credentials.email,
-          role: "PARTNER",
+          role,
         };
       },
     }),

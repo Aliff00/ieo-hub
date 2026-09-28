@@ -80,6 +80,67 @@ export default function LoginPage() {
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </form>
+
+          {/* Quick Demo Persona Sign-In */}
+          <div className="pt-2">
+            <div className="relative flex py-2 items-center">
+              <div className="flex-grow border-t border-border/60"></div>
+              <span className="flex-shrink mx-2 text-[10px] uppercase font-semibold text-muted-foreground tracking-wider">
+                Or Test By Role
+              </span>
+              <div className="flex-grow border-t border-border/60"></div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-2 pt-1">
+              <button
+                type="button"
+                onClick={() => {
+                  setEmail("innovator@ieohub.org");
+                  setPassword("password123");
+                  signIn("credentials", {
+                    email: "innovator@ieohub.org",
+                    password: "password123",
+                    callbackUrl: "/dashboard",
+                  });
+                }}
+                className="p-2 rounded-lg border border-amber-500/30 bg-amber-500/10 text-amber-300 hover:bg-amber-500/20 text-center transition-all text-xs font-medium"
+              >
+                🔬 Innovator
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setEmail("partner@enterprise.org");
+                  setPassword("password123");
+                  signIn("credentials", {
+                    email: "partner@enterprise.org",
+                    password: "password123",
+                    callbackUrl: "/dashboard",
+                  });
+                }}
+                className="p-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 text-center transition-all text-xs font-medium"
+              >
+                🤝 Partner
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setEmail("admin@ieohub.org");
+                  setPassword("password123");
+                  signIn("credentials", {
+                    email: "admin@ieohub.org",
+                    password: "password123",
+                    callbackUrl: "/dashboard",
+                  });
+                }}
+                className="p-2 rounded-lg border border-blue-500/30 bg-blue-500/10 text-blue-300 hover:bg-blue-500/20 text-center transition-all text-xs font-medium"
+              >
+                ⚙️ Admin
+              </button>
+            </div>
+          </div>
         </CardContent>
 
         <CardFooter className="flex flex-col space-y-2 text-center text-xs text-muted-foreground border-t border-border/50 pt-4">
