@@ -63,29 +63,10 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col scroll-smooth selection:bg-primary/20">
       
-      {/* 1. Top Tier Utility Bar (Inspired by Corporate Enterprise Layout) */}
-      <div className="w-full border-b border-border/40 bg-card/40 text-xs px-6 py-2 hidden lg:flex items-center justify-between text-muted-foreground">
-        <div className="flex items-center space-x-6">
-          <span className="text-foreground font-semibold flex items-center">
-            <Radio className="h-3 w-3 text-emerald-400 mr-1.5 animate-pulse" /> IEO Physical Hub Active
-          </span>
-          <a href="#about" className="hover:text-foreground transition-colors">Talent & Startups</a>
-          <a href="#use-cases" className="hover:text-foreground transition-colors">Enterprise Innovation</a>
-          <a href="#ecosystem" className="hover:text-foreground transition-colors">Research & Universities</a>
-        </div>
-        <div className="flex items-center space-x-4">
-          <span className="font-semibold text-foreground">EN</span>
-          <span className="text-border">|</span>
-          <Link href="/login" className="hover:text-foreground transition-colors">Partner Portal</Link>
-          <span className="text-border">|</span>
-          <a href="#support" className="hover:text-foreground transition-colors">Support & Advisory</a>
-        </div>
-      </div>
-
-      {/* 2. Main Sticky Navigation Bar */}
-      <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur px-6 h-16 flex items-center justify-between">
-        <div className="flex items-center space-x-3">
-          <div className="relative h-10 w-10 rounded-xl bg-white p-1.5 flex items-center justify-center shadow-md border border-border/40 overflow-hidden">
+      {/* Fixed Sticky Header */}
+      <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur px-4 sm:px-6 h-16 flex items-center justify-between">
+        <div className="flex items-center space-x-3 sm:space-x-4">
+          <div className="relative h-10 w-10 rounded-xl bg-white p-1.5 flex items-center justify-center shadow-md border border-border/40 overflow-hidden shrink-0">
             <Image
               src="/logo.jpg"
               alt="IEO Hub Logo"
@@ -96,24 +77,26 @@ export default function HomePage() {
             />
           </div>
           <div>
-            <span className="font-bold text-lg text-foreground tracking-tight">IEO Hub</span>
-            <span className="text-[10px] block -mt-1 uppercase tracking-widest text-muted-foreground font-semibold">
+            <div className="flex items-center space-x-2">
+              <span className="font-bold text-lg text-foreground tracking-tight">IEO Hub</span>
+              <span className="hidden sm:inline-flex items-center text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <Radio className="h-2.5 w-2.5 mr-1 text-emerald-400 animate-pulse" /> Hub Active
+              </span>
+            </div>
+            <span className="text-[10px] block -mt-0.5 uppercase tracking-widest text-muted-foreground font-semibold">
               Innovation • Ecosystem • Orchestration
             </span>
           </div>
         </div>
 
-        <nav className="hidden xl:flex items-center space-x-7 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-          <Link href="/" className="text-foreground hover:text-foreground transition-colors">Home</Link>
-          <a href="#about" className="hover:text-foreground transition-colors">About IEO</a>
-          <a href="#journey" className="hover:text-foreground transition-colors">Innovation Journey</a>
-          <a href="#use-cases" className="hover:text-foreground transition-colors">Use Cases</a>
-          <a href="#ecosystem" className="hover:text-foreground transition-colors">Our Ecosystem</a>
-          <a href="#offer" className="hover:text-foreground transition-colors">What We Offer</a>
-          <a href="#faqs" className="hover:text-foreground transition-colors">Support</a>
-        </nav>
+        {/* Right Actions: Language Selector + Booking / Auth CTA */}
+        <div className="flex items-center space-x-2 sm:space-x-3">
+          {/* Fixed Language Selector */}
+          <div className="flex items-center space-x-1.5 px-2.5 py-1 rounded-lg border border-border/60 bg-secondary/30 text-xs font-semibold text-foreground">
+            <Globe2 className="h-3.5 w-3.5 text-muted-foreground" />
+            <span>EN</span>
+          </div>
 
-        <div className="flex items-center space-x-2.5">
           <Link href="/facilities">
             <Button variant="outline" size="sm" className="hidden sm:inline-flex text-xs font-semibold">
               Book Now
@@ -149,7 +132,7 @@ export default function HomePage() {
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.12]">
             Turn your ideas into reality with the power of{" "}
             <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
-              ULTRA 5G and AI.
+              HYPER 5G and Neural AI.
             </span>
           </h1>
 
@@ -165,7 +148,7 @@ export default function HomePage() {
             </Link>
             <a href="#about">
               <Button size="lg" variant="outline" className="w-full sm:w-auto px-8 h-12 text-base border-border/80">
-                Discover EIP Framework
+                Discover IEO Framework
               </Button>
             </a>
           </div>
@@ -185,7 +168,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. "About EIP" Section (What is EIP / What We Do / Who EIP is For) */}
+      {/* 4. "About IEO" Section (What is IEO / What We Do / Who IEO is For) */}
       <section id="about" className="py-20 border-t border-border/40 bg-card/20 px-6">
         <div className="container max-w-6xl mx-auto space-y-10">
           <div className="text-center max-w-2xl mx-auto space-y-2">
@@ -196,7 +179,7 @@ export default function HomePage() {
               A Strategic Foundation for Innovation
             </h2>
             <p className="text-sm text-muted-foreground">
-              Built on ULTRA5G and AI to accelerate enterprise innovation and digital adoption in line with national technology mandates.
+              Built on 5G-Advanced and Neural AI to accelerate enterprise innovation and digital adoption in line with national technology mandates.
             </p>
           </div>
 
