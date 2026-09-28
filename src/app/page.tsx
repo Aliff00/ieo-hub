@@ -132,7 +132,7 @@ export default function HomePage() {
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.12]">
             Turn your ideas into reality with the power of{" "}
             <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
-              HYPER 5G and Neural AI.
+              SUPER 5G and AI.
             </span>
           </h1>
 
@@ -179,7 +179,7 @@ export default function HomePage() {
               A Strategic Foundation for Innovation
             </h2>
             <p className="text-sm text-muted-foreground">
-              Built on 5G-Advanced and Neural AI to accelerate enterprise innovation and digital adoption in line with national technology mandates.
+              Built on 5G-Advanced and AI to accelerate enterprise innovation and digital adoption in line with national technology mandates.
             </p>
           </div>
 
