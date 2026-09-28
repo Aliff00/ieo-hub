@@ -32,7 +32,7 @@ export default function FacilityBookingPage() {
         <CardContent>
           {submitted ? (
             <div className="text-center py-8 space-y-3">
-              <div className="h-12 w-12 rounded-full bg-emerald-500/10 text-emerald-400 mx-auto flex items-center justify-center">
+              <div className="h-12 w-12 rounded-full bg-primary/10 text-primary mx-auto flex items-center justify-center">
                 <CheckCircle2 className="h-6 w-6" />
               </div>
               <h3 className="text-lg font-bold text-foreground">Reservation Request Submitted</h3>

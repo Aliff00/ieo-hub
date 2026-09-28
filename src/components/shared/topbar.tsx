@@ -12,6 +12,7 @@ import {
   Building2, 
   SlidersHorizontal 
 } from "lucide-react";
+import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useRole, UserRole } from "@/contexts/role-context";
@@ -37,7 +38,7 @@ export function Topbar() {
           <div>
             <div className="flex items-center space-x-2">
               <span className="font-bold text-base text-foreground tracking-tight">IEO Hub</span>
-              <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
+              <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">
                 ORCHESTRATION OS
               </span>
             </div>
@@ -49,18 +50,18 @@ export function Topbar() {
       </div>
 
       {/* Center/Right: Role Switcher & Profile */}
-      <div className="flex items-center space-x-3 sm:space-x-4">
+      <div className="flex items-center space-x-2 sm:space-x-3">
         {/* Interactive Role Switcher for Testing/Demonstrating RBAC */}
-        <div className="hidden lg:flex items-center space-x-1.5 p-1 rounded-xl bg-card border border-border/70 text-xs">
+        <div className="hidden lg:flex items-center space-x-1 p-1 rounded-xl bg-card border border-border text-xs">
           <span className="text-[11px] font-semibold text-muted-foreground px-2 flex items-center">
             <SlidersHorizontal className="h-3 w-3 mr-1 text-primary" /> Active Persona:
           </span>
           {(["INNOVATOR", "PARTNER", "ADMIN"] as UserRole[]).map((r) => {
             const isActive = activeRole === r;
             const labels = {
-              INNOVATOR: "🔬 Innovator",
-              PARTNER: "🤝 Partner",
-              ADMIN: "⚙️ Admin",
+              INNOVATOR: "Innovator",
+              PARTNER: "Partner",
+              ADMIN: "Admin",
             };
             return (
               <button
@@ -69,7 +70,7 @@ export function Topbar() {
                 className={`px-2.5 py-1 rounded-lg font-medium text-xs transition-all ${
                   isActive
                     ? "bg-primary text-primary-foreground font-semibold shadow-sm"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"
+                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
                 }`}
               >
                 {labels[r]}
@@ -89,6 +90,9 @@ export function Topbar() {
             ← Public Portal
           </Button>
         </Link>
+
+        {/* Theme Toggle (Light / Dark mode) */}
+        <ThemeToggle />
 
         {/* Notifications */}
         <Button variant="ghost" size="icon" aria-label="Notifications" className="text-muted-foreground hover:text-foreground">
@@ -114,7 +118,7 @@ export function Topbar() {
           size="icon"
           title="Sign Out to Public Showcase"
           onClick={() => signOut({ callbackUrl: "/" })}
-          className="text-muted-foreground hover:text-rose-400 hover:bg-rose-500/10 transition-colors"
+          className="text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
         >
           <LogOut className="h-4 w-4" />
         </Button>

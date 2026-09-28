@@ -4,26 +4,50 @@
 
 @layer base {
   :root {
+    /* Crisp Modern Light Mode - Unified Blue & Slate System */
+    --background: 210 33% 99%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 94%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 90%;
+    --input: 214.3 31.8% 90%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Sleek Focused Dark Mode - Deep Slate & Cyan Blue */
     --background: 224 71% 4%;
     --foreground: 213 31% 91%;
-    --muted: 223 47% 11%;
-    --muted-foreground: 215.4 16.3% 56.9%;
-    --popover: 224 71% 4%;
-    --popover-foreground: 215 20.2% 65.1%;
-    --border: 216 34% 17%;
-    --input: 216 34% 17%;
-    --card: 224 71% 4%;
+    --card: 224 45% 7%;
     --card-foreground: 213 31% 91%;
+    --popover: 224 45% 7%;
+    --popover-foreground: 213 31% 91%;
     --primary: 217.2 91.2% 59.8%;
     --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 14%;
     --secondary-foreground: 210 40% 98%;
-    --accent: 216 34% 17%;
+    --muted: 217.2 32.6% 14%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 14%;
     --accent-foreground: 210 40% 98%;
-    --destructive: 0 63% 31%;
+    --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 16%;
+    --input: 217.2 32.6% 16%;
     --ring: 217.2 91.2% 59.8%;
-    --radius: 0.5rem;
   }
 }
 
@@ -32,7 +56,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background text-foreground antialiased transition-colors duration-200;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }

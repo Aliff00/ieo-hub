@@ -32,6 +32,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ThemeToggle } from "@/components/shared/theme-toggle";
 
 export default function HomePage() {
   const [activeAboutTab, setActiveAboutTab] = useState<"what" | "do" | "for">("what");
@@ -61,12 +62,12 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col scroll-smooth selection:bg-primary/20">
+    <div className="min-h-screen bg-background text-foreground flex flex-col scroll-smooth selection:bg-primary/20 transition-colors duration-200">
       
       {/* Fixed Sticky Header */}
-      <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur px-4 sm:px-6 h-16 flex items-center justify-between">
+      <header className="sticky top-0 z-50 w-full border-b border-border/80 bg-background/95 backdrop-blur px-4 sm:px-6 h-16 flex items-center justify-between">
         <div className="flex items-center space-x-3 sm:space-x-4">
-          <div className="relative h-10 w-10 rounded-xl bg-white p-1.5 flex items-center justify-center shadow-md border border-border/40 overflow-hidden shrink-0">
+          <div className="relative h-10 w-10 rounded-xl bg-white p-1.5 flex items-center justify-center shadow-sm border border-border overflow-hidden shrink-0">
             <Image
               src="/logo.jpg"
               alt="IEO Hub Logo"
@@ -79,8 +80,8 @@ export default function HomePage() {
           <div>
             <div className="flex items-center space-x-2">
               <span className="font-bold text-lg text-foreground tracking-tight">IEO Hub</span>
-              <span className="hidden sm:inline-flex items-center text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                <Radio className="h-2.5 w-2.5 mr-1 text-emerald-400 animate-pulse" /> Hub Active
+              <span className="hidden sm:inline-flex items-center text-[10px] font-semibold px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
+                <Radio className="h-2.5 w-2.5 mr-1 text-primary animate-pulse" /> Hub Active
               </span>
             </div>
             <span className="text-[10px] block -mt-0.5 uppercase tracking-widest text-muted-foreground font-semibold">
@@ -89,22 +90,25 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Right Actions: Language Selector + Booking / Auth CTA */}
+        {/* Right Actions: Theme Toggle + Language Selector + CTAs */}
         <div className="flex items-center space-x-2 sm:space-x-3">
+          {/* Light / Dark Mode Toggle */}
+          <ThemeToggle />
+
           {/* Fixed Language Selector */}
-          <div className="flex items-center space-x-1.5 px-2.5 py-1 rounded-lg border border-border/60 bg-secondary/30 text-xs font-semibold text-foreground">
+          <div className="flex items-center space-x-1.5 px-2.5 py-1 rounded-lg border border-border bg-secondary/50 text-xs font-semibold text-foreground">
             <Globe2 className="h-3.5 w-3.5 text-muted-foreground" />
             <span>EN</span>
           </div>
 
           <Link href="/facilities">
             <Button variant="outline" size="sm" className="hidden sm:inline-flex text-xs font-semibold">
-              Book Now
+              Book Facilities
             </Button>
           </Link>
           <Link href="/register">
-            <Button variant="gradient" size="sm" className="text-xs font-semibold shadow-md">
-              Join Now
+            <Button variant="gradient" size="sm" className="text-xs font-semibold shadow-sm">
+              Join Ecosystem
             </Button>
           </Link>
           <Link href="/login">
@@ -115,23 +119,23 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* 3. Hero Section (Full Viewport on Desktop) */}
+      {/* Hero Section (Full Viewport on Desktop) */}
       <section className="relative min-h-[calc(100vh-4rem)] flex flex-col justify-between items-center text-center px-4 pt-12 pb-6 overflow-hidden">
-        {/* Ambient Gradient Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-full bg-gradient-to-b from-blue-600/15 via-indigo-600/10 to-transparent blur-3xl pointer-events-none" />
+        {/* Unified Blue Ambient Glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-full bg-gradient-to-b from-primary/10 via-primary/5 to-transparent blur-3xl pointer-events-none" />
 
         <div className="hidden md:block h-2" />
 
         <div className="container max-w-5xl mx-auto space-y-6 relative my-auto">
-          {/* Eyebrow Tagline */}
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary">
+          {/* Unified Tagline */}
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary">
             <Sparkles className="h-3.5 w-3.5" />
             <span>Powering innovation & collaboration</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.12]">
             Turn your ideas into reality with the power of{" "}
-            <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="text-primary">
               SUPER 5G and AI.
             </span>
           </h1>
@@ -142,12 +146,12 @@ export default function HomePage() {
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/register">
-              <Button size="lg" variant="gradient" className="w-full sm:w-auto font-semibold px-8 h-12 text-base shadow-xl shadow-blue-500/20">
+              <Button size="lg" variant="gradient" className="w-full sm:w-auto font-semibold px-8 h-12 text-base shadow-lg shadow-primary/20">
                 Start your journey <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
             <a href="#about">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto px-8 h-12 text-base border-border/80">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto px-8 h-12 text-base border-border">
                 Discover IEO Framework
               </Button>
             </a>
@@ -160,19 +164,19 @@ export default function HomePage() {
             href="#about"
             className="flex flex-col items-center space-y-1 text-muted-foreground hover:text-foreground transition-colors group cursor-pointer"
           >
-            <span className="text-[11px] font-semibold tracking-widest uppercase text-muted-foreground group-hover:text-blue-400 transition-colors">
+            <span className="text-[11px] font-semibold tracking-widest uppercase text-muted-foreground group-hover:text-primary transition-colors">
               Scroll to explore
             </span>
-            <ChevronDown className="h-4 w-4 text-blue-400 group-hover:translate-y-0.5 transition-transform" />
+            <ChevronDown className="h-4 w-4 text-primary group-hover:translate-y-0.5 transition-transform" />
           </a>
         </div>
       </section>
 
-      {/* 4. "About IEO" Section (What is IEO / What We Do / Who IEO is For) */}
-      <section id="about" className="py-20 border-t border-border/40 bg-card/20 px-6">
+      {/* About IEO Section */}
+      <section id="about" className="py-20 border-t border-border bg-card/40 px-6">
         <div className="container max-w-6xl mx-auto space-y-10">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <Badge variant="outline" className="text-xs uppercase tracking-wider text-primary border-primary/30">
+            <Badge variant="outline" className="text-xs uppercase tracking-wider text-primary border-primary/30 bg-primary/5">
               About the Platform
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -185,12 +189,12 @@ export default function HomePage() {
 
           {/* Interactive Selector Tabs */}
           <div className="flex justify-center">
-            <div className="p-1 rounded-xl bg-card border border-border/60 flex space-x-1">
+            <div className="p-1 rounded-xl bg-card border border-border flex space-x-1 shadow-sm">
               <button
                 onClick={() => setActiveAboutTab("what")}
                 className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
                   activeAboutTab === "what"
-                    ? "bg-primary text-primary-foreground shadow"
+                    ? "bg-primary text-primary-foreground shadow-sm"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -200,7 +204,7 @@ export default function HomePage() {
                 onClick={() => setActiveAboutTab("do")}
                 className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
                   activeAboutTab === "do"
-                    ? "bg-primary text-primary-foreground shadow"
+                    ? "bg-primary text-primary-foreground shadow-sm"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -210,7 +214,7 @@ export default function HomePage() {
                 onClick={() => setActiveAboutTab("for")}
                 className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
                   activeAboutTab === "for"
-                    ? "bg-primary text-primary-foreground shadow"
+                    ? "bg-primary text-primary-foreground shadow-sm"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -220,16 +224,16 @@ export default function HomePage() {
           </div>
 
           {/* Tab Content Display */}
-          <div className="p-8 rounded-2xl border border-border/60 bg-card/80 backdrop-blur shadow-xl">
+          <div className="p-8 rounded-2xl border border-border bg-card shadow-sm">
             {activeAboutTab === "what" && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div className="space-y-4">
-                  <div className="h-10 w-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold">
+                  <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold">
                     <Radio className="h-5 w-5" />
                   </div>
                   <h3 className="text-2xl font-bold">What is IEO Hub?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    The Enterprise Innovation Platform (IEO Hub) is a strategic initiative designed to accelerate <strong>5G-Advanced (5G-A)</strong> and <strong>Artificial Intelligence (AI)</strong> adoption for Malaysian and regional enterprises.
+                    The Enterprise Innovation Platform (IEO Hub) is a strategic initiative designed to accelerate <strong>5G-Advanced (5G-A)</strong> and <strong>Artificial Intelligence (AI)</strong> adoption for enterprises, startups, and research institutions.
                   </p>
                   <p className="text-xs text-muted-foreground leading-relaxed">
                     It acts as a digital and physical bridge linking real-world infrastructure (MakerLabs, cleanrooms, immersive XR arenas) with commercial industry opportunities.
@@ -242,12 +246,12 @@ export default function HomePage() {
                     </Link>
                   </div>
                 </div>
-                <div className="p-6 rounded-xl bg-secondary/30 border border-border/50 space-y-3">
+                <div className="p-6 rounded-xl bg-secondary/50 border border-border space-y-3">
                   <h4 className="text-xs uppercase font-bold tracking-wider text-primary">Core Tenets</h4>
                   <div className="space-y-2.5 text-xs text-muted-foreground">
-                    <div className="flex items-start"><CheckCircle2 className="h-4 w-4 text-emerald-400 mr-2 shrink-0 mt-0.5" /> High-speed low-latency 5G-A edge connectivity</div>
-                    <div className="flex items-start"><CheckCircle2 className="h-4 w-4 text-emerald-400 mr-2 shrink-0 mt-0.5" /> Physical testing labs for microelectronics & robotics</div>
-                    <div className="flex items-start"><CheckCircle2 className="h-4 w-4 text-emerald-400 mr-2 shrink-0 mt-0.5" /> Stage-gate corporate incubation and pilot financing</div>
+                    <div className="flex items-start"><CheckCircle2 className="h-4 w-4 text-primary mr-2 shrink-0 mt-0.5" /> High-speed low-latency 5G-A edge connectivity</div>
+                    <div className="flex items-start"><CheckCircle2 className="h-4 w-4 text-primary mr-2 shrink-0 mt-0.5" /> Physical testing labs for microelectronics & robotics</div>
+                    <div className="flex items-start"><CheckCircle2 className="h-4 w-4 text-primary mr-2 shrink-0 mt-0.5" /> Stage-gate corporate incubation and pilot financing</div>
                   </div>
                 </div>
               </div>
@@ -256,7 +260,7 @@ export default function HomePage() {
             {activeAboutTab === "do" && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div className="space-y-4">
-                  <div className="h-10 w-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold">
+                  <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold">
                     <Layers className="h-5 w-5" />
                   </div>
                   <h3 className="text-2xl font-bold">What We Do</h3>
@@ -268,20 +272,20 @@ export default function HomePage() {
                   </p>
                 </div>
                 <div className="grid grid-cols-2 gap-3 text-center">
-                  <div className="p-4 rounded-xl border border-border/60 bg-secondary/20">
+                  <div className="p-4 rounded-xl border border-border bg-secondary/40">
                     <div className="text-2xl font-bold text-foreground">42+</div>
                     <div className="text-[11px] text-muted-foreground mt-1">Pre-commercial Assets</div>
                   </div>
-                  <div className="p-4 rounded-xl border border-border/60 bg-secondary/20">
-                    <div className="text-2xl font-bold text-emerald-400">88.4%</div>
+                  <div className="p-4 rounded-xl border border-border bg-secondary/40">
+                    <div className="text-2xl font-bold text-primary">88.4%</div>
                     <div className="text-[11px] text-muted-foreground mt-1">Hub Space Utilization</div>
                   </div>
-                  <div className="p-4 rounded-xl border border-border/60 bg-secondary/20">
-                    <div className="text-2xl font-bold text-blue-400">128+</div>
+                  <div className="p-4 rounded-xl border border-border bg-secondary/40">
+                    <div className="text-2xl font-bold text-foreground">128+</div>
                     <div className="text-[11px] text-muted-foreground mt-1">Ecosystem Partners</div>
                   </div>
-                  <div className="p-4 rounded-xl border border-border/60 bg-secondary/20">
-                    <div className="text-2xl font-bold text-amber-400">37+</div>
+                  <div className="p-4 rounded-xl border border-border bg-secondary/40">
+                    <div className="text-2xl font-bold text-primary">37+</div>
                     <div className="text-[11px] text-muted-foreground mt-1">Live Industry Pilots</div>
                   </div>
                 </div>
@@ -309,9 +313,9 @@ export default function HomePage() {
                   ].map((category) => (
                     <div
                       key={category}
-                      className="px-4 py-2 rounded-xl bg-secondary/50 border border-border/70 text-xs font-semibold text-foreground flex items-center space-x-2"
+                      className="px-4 py-2 rounded-xl bg-secondary/60 border border-border text-xs font-semibold text-foreground flex items-center space-x-2"
                     >
-                      <CheckCircle2 className="h-3.5 w-3.5 text-blue-400" />
+                      <CheckCircle2 className="h-3.5 w-3.5 text-primary" />
                       <span>{category}</span>
                     </div>
                   ))}
@@ -322,11 +326,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. "We Drive 5G Innovation Journey" (Stage-Gate Pipeline) */}
-      <section id="journey" className="py-20 border-t border-border/40 px-6">
+      {/* Innovation Journey Pipeline */}
+      <section id="journey" className="py-20 border-t border-border px-6">
         <div className="container max-w-6xl mx-auto space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <Badge variant="outline" className="text-xs uppercase tracking-wider text-emerald-400 border-emerald-500/30">
+            <Badge variant="outline" className="text-xs uppercase tracking-wider text-primary border-primary/30 bg-primary/5">
               Structured Methodology
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -338,54 +342,47 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="p-6 rounded-2xl border border-border/70 bg-card/60 relative space-y-3">
-              <div className="h-8 w-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-xs">
-                01
+            {[
+              {
+                step: "01",
+                title: "Frame & Ideate",
+                desc: "Define commercial challenge statements with industry mentors, examine IP patents, and align architectural goals."
+              },
+              {
+                step: "02",
+                title: "Develop",
+                desc: "Engineer rapid prototypes inside MakerLabs using industrial 5-axis CNCs, SLA 3D printers, and edge AI kits."
+              },
+              {
+                step: "03",
+                title: "Test",
+                desc: "Validate low-latency wireless transmission, microfluidic sensing in Cleanrooms, and spatial audio in XR Studios."
+              },
+              {
+                step: "04",
+                title: "Demo & Scale",
+                desc: "Showcase verified outcomes to enterprises, agencies, and investors in the Executive Alliance Arena for commercial contracts."
+              }
+            ].map((s) => (
+              <div key={s.step} className="p-6 rounded-2xl border border-border bg-card relative space-y-3 shadow-sm hover:border-primary/50 transition-colors">
+                <div className="h-8 w-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">
+                  {s.step}
+                </div>
+                <h3 className="text-base font-bold text-foreground">{s.title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {s.desc}
+                </p>
               </div>
-              <h3 className="text-base font-bold text-foreground">Frame & Ideate</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Define commercial challenge statements with industry mentors, examine IP patents, and align architectural goals.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl border border-border/70 bg-card/60 relative space-y-3">
-              <div className="h-8 w-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-xs">
-                02
-              </div>
-              <h3 className="text-base font-bold text-foreground">Develop</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Engineer rapid prototypes inside MakerLabs using industrial 5-axis CNCs, SLA 3D printers, and edge AI kits.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl border border-border/70 bg-card/60 relative space-y-3">
-              <div className="h-8 w-8 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold text-xs">
-                03
-              </div>
-              <h3 className="text-base font-bold text-foreground">Test</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Validate low-latency wireless transmission, microfluidic sensing in Cleanrooms, and spatial audio in XR Studios.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl border border-border/70 bg-card/60 relative space-y-3">
-              <div className="h-8 w-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-xs">
-                04
-              </div>
-              <h3 className="text-base font-bold text-foreground">Demo & Scale</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Showcase verified outcomes to enterprises, agencies, and investors in the Executive Alliance Arena for commercial contracts.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 6. "Real World Use Case Development" */}
-      <section id="use-cases" className="py-20 border-t border-border/40 bg-card/20 px-6">
+      {/* Real-World Use Case Development */}
+      <section id="use-cases" className="py-20 border-t border-border bg-card/40 px-6">
         <div className="container max-w-6xl mx-auto space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <Badge variant="outline" className="text-xs uppercase tracking-wider text-purple-400 border-purple-500/30">
+            <Badge variant="outline" className="text-xs uppercase tracking-wider text-primary border-primary/30 bg-primary/5">
               Live Demonstrations
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -397,9 +394,9 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="bg-card/70 border-border/70 hover:border-primary/50 transition-all">
+            <Card className="bg-card border-border hover:border-primary/50 transition-all shadow-sm">
               <CardHeader className="space-y-1">
-                <div className="h-9 w-9 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center mb-2">
+                <div className="h-9 w-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-2">
                   <Cpu className="h-5 w-5" />
                 </div>
                 <CardTitle className="text-lg font-bold">Digital Twin with 5G, IoT & Spatial AI</CardTitle>
@@ -417,9 +414,9 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-card/70 border-border/70 hover:border-primary/50 transition-all">
+            <Card className="bg-card border-border hover:border-primary/50 transition-all shadow-sm">
               <CardHeader className="space-y-1">
-                <div className="h-9 w-9 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-2">
+                <div className="h-9 w-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-2">
                   <Eye className="h-5 w-5" />
                 </div>
                 <CardTitle className="text-lg font-bold">5G + AI-Driven Visual Intelligence</CardTitle>
@@ -437,9 +434,9 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-card/70 border-border/70 hover:border-primary/50 transition-all">
+            <Card className="bg-card border-border hover:border-primary/50 transition-all shadow-sm">
               <CardHeader className="space-y-1">
-                <div className="h-9 w-9 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center mb-2">
+                <div className="h-9 w-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-2">
                   <Plane className="h-5 w-5" />
                 </div>
                 <CardTitle className="text-lg font-bold">5G Drone Patrolling & Data Capture</CardTitle>
@@ -457,9 +454,9 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-card/70 border-border/70 hover:border-primary/50 transition-all">
+            <Card className="bg-card border-border hover:border-primary/50 transition-all shadow-sm">
               <CardHeader className="space-y-1">
-                <div className="h-9 w-9 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center mb-2">
+                <div className="h-9 w-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-2">
                   <Bot className="h-5 w-5" />
                 </div>
                 <CardTitle className="text-lg font-bold">Humanoid Robotic Autonomous Intelligence</CardTitle>
@@ -480,11 +477,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. "What We Offer" Section */}
-      <section id="offer" className="py-20 border-t border-border/40 px-6">
+      {/* What We Offer Section */}
+      <section id="offer" className="py-20 border-t border-border px-6">
         <div className="container max-w-6xl mx-auto space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <Badge variant="outline" className="text-xs uppercase tracking-wider text-primary border-primary/30">
+            <Badge variant="outline" className="text-xs uppercase tracking-wider text-primary border-primary/30 bg-primary/5">
               Ecosystem Enablement
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -496,46 +493,45 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-6 rounded-2xl border border-border/60 bg-card/60 space-y-2">
-              <Building2 className="h-6 w-6 text-blue-400" />
-              <h3 className="font-bold text-sm text-foreground">World-Class Facilities</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                ISO Class 6 Cleanrooms, rapid SLA 3D printing labs, spatial audio isolation chambers, and alliance pitch auditoriums.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl border border-border/60 bg-card/60 space-y-2">
-              <Users className="h-6 w-6 text-emerald-400" />
-              <h3 className="font-bold text-sm text-foreground">Industry Mentors</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Direct advisory from telco network architects, enterprise CIOs, patent attorneys, and venture capital partners.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl border border-border/60 bg-card/60 space-y-2">
-              <ShieldCheck className="h-6 w-6 text-purple-400" />
-              <h3 className="font-bold text-sm text-foreground">Regulatory Sandbox</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Safe testing zone conforming to MCMC, eIDAS 2.0, and national standards for rapid live compliance validation.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl border border-border/60 bg-card/60 space-y-2">
-              <TrendingUp className="h-6 w-6 text-amber-400" />
-              <h3 className="font-bold text-sm text-foreground">Capital & Pilot Co-Creation</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Bilateral corporate matching, POC sponsorships, and direct procurement channels into enterprise supply chains.
-              </p>
-            </div>
+            {[
+              {
+                icon: Building2,
+                title: "World-Class Facilities",
+                desc: "ISO Class 6 Cleanrooms, rapid SLA 3D printing labs, spatial audio isolation chambers, and alliance pitch auditoriums."
+              },
+              {
+                icon: Users,
+                title: "Industry Mentors",
+                desc: "Direct advisory from telco network architects, enterprise CIOs, patent attorneys, and venture capital partners."
+              },
+              {
+                icon: ShieldCheck,
+                title: "Regulatory Sandbox",
+                desc: "Safe testing zone conforming to MCMC, eIDAS 2.0, and national standards for rapid live compliance validation."
+              },
+              {
+                icon: TrendingUp,
+                title: "Capital & Pilot Co-Creation",
+                desc: "Bilateral corporate matching, POC sponsorships, and direct procurement channels into enterprise supply chains."
+              }
+            ].map((f) => (
+              <div key={f.title} className="p-6 rounded-2xl border border-border bg-card space-y-2.5 shadow-sm">
+                <f.icon className="h-6 w-6 text-primary" />
+                <h3 className="font-bold text-sm text-foreground">{f.title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {f.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 8. "Our Ecosystem & Partners" Section */}
-      <section id="ecosystem" className="py-20 border-t border-border/40 bg-card/20 px-6">
+      {/* Strategic Ecosystem Alliances */}
+      <section id="ecosystem" className="py-20 border-t border-border bg-card/40 px-6">
         <div className="container max-w-6xl mx-auto space-y-10 text-center">
           <div className="max-w-2xl mx-auto space-y-2">
-            <Badge variant="outline" className="text-xs uppercase tracking-wider text-foreground">
+            <Badge variant="outline" className="text-xs uppercase tracking-wider text-foreground border-border">
               Strategic Alliances
             </Badge>
             <h2 className="text-3xl font-extrabold tracking-tight">Our Ecosystem</h2>
@@ -557,7 +553,7 @@ export default function HomePage() {
             ].map((partner) => (
               <div
                 key={partner}
-                className="p-4 rounded-xl border border-border/60 bg-card/70 flex items-center justify-center text-xs font-semibold text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors"
+                className="p-4 rounded-xl border border-border bg-card flex items-center justify-center text-xs font-semibold text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors shadow-sm"
               >
                 {partner}
               </div>
@@ -566,12 +562,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 9. "Latest Events & Case Studies" Section */}
-      <section className="py-20 border-t border-border/40 px-6">
+      {/* Latest Events & Case Studies */}
+      <section className="py-20 border-t border-border px-6">
         <div className="container max-w-6xl mx-auto space-y-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <Badge variant="outline" className="text-xs uppercase tracking-wider text-primary border-primary/30">
+              <Badge variant="outline" className="text-xs uppercase tracking-wider text-primary border-primary/30 bg-primary/5">
                 Newsroom & Milestones
               </Badge>
               <h2 className="text-3xl font-extrabold tracking-tight">Latest Events & Case Studies</h2>
@@ -582,7 +578,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="bg-card/60 border-border/60">
+            <Card className="bg-card border-border shadow-sm">
               <CardHeader className="space-y-1">
                 <span className="text-[11px] text-muted-foreground">Ecosystem Press Release • 2026</span>
                 <CardTitle className="text-base font-bold">
@@ -593,13 +589,13 @@ export default function HomePage() {
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   Introducing a unified physical-to-digital infrastructure to connect Malaysian talent, technology assets, and enterprise partners.
                 </p>
-                <div className="text-[11px] text-blue-400 font-semibold hover:underline cursor-pointer">
+                <div className="text-[11px] text-primary font-semibold hover:underline cursor-pointer">
                   Read Announcement →
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-card/60 border-border/60">
+            <Card className="bg-card border-border shadow-sm">
               <CardHeader className="space-y-1">
                 <span className="text-[11px] text-muted-foreground">Industry Pilot Case Study • 2026</span>
                 <CardTitle className="text-base font-bold">
@@ -610,13 +606,13 @@ export default function HomePage() {
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   How high-speed edge telemetry reduced latency to 8ms across robotic assembly arms in our cluster MakerLab.
                 </p>
-                <div className="text-[11px] text-blue-400 font-semibold hover:underline cursor-pointer">
+                <div className="text-[11px] text-primary font-semibold hover:underline cursor-pointer">
                   Read Case Study →
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-card/60 border-border/60">
+            <Card className="bg-card border-border shadow-sm">
               <CardHeader className="space-y-1">
                 <span className="text-[11px] text-muted-foreground">Academic Research Alliance • 2026</span>
                 <CardTitle className="text-base font-bold">
@@ -627,7 +623,7 @@ export default function HomePage() {
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   Validating advanced metal-organic framework (MOF) bio-sensing prototypes through ISO Class 6 Cleanroom facilities.
                 </p>
-                <div className="text-[11px] text-blue-400 font-semibold hover:underline cursor-pointer">
+                <div className="text-[11px] text-primary font-semibold hover:underline cursor-pointer">
                   Read Case Study →
                 </div>
               </CardContent>
@@ -636,11 +632,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 10. Frequently Asked Questions (FAQ) */}
-      <section id="faqs" className="py-20 border-t border-border/40 bg-card/20 px-6">
+      {/* Frequently Asked Questions */}
+      <section id="faqs" className="py-20 border-t border-border bg-card/40 px-6">
         <div className="container max-w-4xl mx-auto space-y-10">
           <div className="text-center space-y-2">
-            <Badge variant="outline" className="text-xs uppercase tracking-wider text-foreground">
+            <Badge variant="outline" className="text-xs uppercase tracking-wider text-foreground border-border">
               Knowledge Base
             </Badge>
             <h2 className="text-3xl font-extrabold tracking-tight">Frequently Asked Questions</h2>
@@ -655,7 +651,7 @@ export default function HomePage() {
               return (
                 <div
                   key={idx}
-                  className="rounded-xl border border-border/60 bg-card/70 overflow-hidden transition-all"
+                  className="rounded-xl border border-border bg-card overflow-hidden transition-all shadow-sm"
                 >
                   <button
                     onClick={() => setExpandedFaq(isOpen ? null : idx)}
@@ -665,7 +661,7 @@ export default function HomePage() {
                     <ChevronDown className={`h-4 w-4 shrink-0 transition-transform ${isOpen ? "rotate-180 text-primary" : "text-muted-foreground"}`} />
                   </button>
                   {isOpen && (
-                    <div className="px-4 pb-4 text-xs text-muted-foreground leading-relaxed border-t border-border/40 pt-3">
+                    <div className="px-4 pb-4 text-xs text-muted-foreground leading-relaxed border-t border-border pt-3">
                       {faq.a}
                     </div>
                   )}
@@ -676,8 +672,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 11. Pre-Footer Call to Action Banner */}
-      <section className="py-16 border-t border-border/40 bg-gradient-to-r from-blue-950/40 via-card to-indigo-950/40 px-6 text-center">
+      {/* Pre-Footer Call to Action Banner */}
+      <section className="py-16 border-t border-border bg-gradient-to-r from-primary/10 via-card to-primary/10 px-6 text-center">
         <div className="container max-w-4xl mx-auto space-y-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">
             Develop, test and demonstrate future-ready solutions.
@@ -687,7 +683,7 @@ export default function HomePage() {
           </p>
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link href="/register">
-              <Button size="lg" variant="gradient" className="w-full sm:w-auto font-semibold px-8 shadow-lg shadow-blue-500/20">
+              <Button size="lg" variant="gradient" className="w-full sm:w-auto font-semibold px-8 shadow-lg shadow-primary/20">
                 Join Ecosystem Today
               </Button>
             </Link>
@@ -700,13 +696,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 12. Corporate Enterprise Footer */}
-      <footer id="support" className="border-t border-border/40 py-14 px-6 bg-card/60 text-xs text-muted-foreground">
+      {/* Corporate Enterprise Footer */}
+      <footer id="support" className="border-t border-border py-14 px-6 bg-card text-xs text-muted-foreground">
         <div className="container max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           {/* Col 1: Brand */}
           <div className="col-span-2 space-y-3">
             <div className="flex items-center space-x-3">
-              <div className="h-8 w-8 rounded-lg bg-white p-1 flex items-center justify-center shadow-sm border border-border/40 overflow-hidden">
+              <div className="h-8 w-8 rounded-lg bg-white p-1 flex items-center justify-center shadow-sm border border-border overflow-hidden">
                 <Image
                   src="/logo.jpg"
                   alt="IEO Hub Logo"
@@ -756,7 +752,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="container max-w-7xl mx-auto pt-8 border-t border-border/40 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px]">
+        <div className="container max-w-7xl mx-auto pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px]">
           <p>© {new Date().getFullYear()} IEO Hub Platform (Innovation, Ecosystem, and Orchestration). All Rights Reserved.</p>
           <div className="flex space-x-4">
             <span className="hover:underline cursor-pointer">Privacy Notice</span>

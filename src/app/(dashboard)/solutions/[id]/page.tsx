@@ -59,15 +59,15 @@ export default function SolutionDetailPage({ params }: { params: { id: string } 
             </CardHeader>
             <CardContent className="space-y-3 text-xs">
               <div className="flex items-center space-x-2 text-foreground">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+                <CheckCircle2 className="h-4 w-4 text-primary" />
                 <span>Compatible with standard ONNX, TensorRT, and OpenVINO runtimes</span>
               </div>
               <div className="flex items-center space-x-2 text-foreground">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+                <CheckCircle2 className="h-4 w-4 text-primary" />
                 <span>Zero-trust cryptographic device attestation baked into firmware</span>
               </div>
               <div className="flex items-center space-x-2 text-foreground">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+                <CheckCircle2 className="h-4 w-4 text-primary" />
                 <span>Enterprise SDK available in Rust, C++, and Python</span>
               </div>
             </CardContent>

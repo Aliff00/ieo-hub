@@ -17,25 +17,25 @@ export default function ImpactPage() {
         <Card className="bg-card/60 p-5">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold uppercase text-muted-foreground">Commercialized Revenue</span>
-            <DollarSign className="h-4 w-4 text-emerald-400" />
+            <DollarSign className="h-4 w-4 text-primary" />
           </div>
           <div className="text-2xl font-extrabold text-foreground mt-2">$28.4M</div>
-          <p className="text-xs text-emerald-400 mt-1 font-medium">+31.2% over previous fiscal year</p>
+          <p className="text-xs text-primary mt-1 font-medium">+31.2% over previous fiscal year</p>
         </Card>
 
         <Card className="bg-card/60 p-5">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold uppercase text-muted-foreground">Registered Patents & IP</span>
-            <FileCheck className="h-4 w-4 text-blue-400" />
+            <FileCheck className="h-4 w-4 text-primary" />
           </div>
           <div className="text-2xl font-extrabold text-foreground mt-2">64 Assets</div>
-          <p className="text-xs text-emerald-400 mt-1 font-medium">18 pending international PCT review</p>
+          <p className="text-xs text-primary mt-1 font-medium">18 pending international PCT review</p>
         </Card>
 
         <Card className="bg-card/60 p-5">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold uppercase text-muted-foreground">Active Ecosystem Partners</span>
-            <Globe className="h-4 w-4 text-purple-400" />
+            <Globe className="h-4 w-4 text-primary" />
           </div>
           <div className="text-2xl font-extrabold text-foreground mt-2">128 Entities</div>
           <p className="text-xs text-muted-foreground mt-1 font-medium">Including 42 tier-1 enterprise sponsors</p>
@@ -63,21 +63,21 @@ export default function ImpactPage() {
                 <tr>
                   <td className="px-4 py-3 font-semibold text-foreground">AI & Cognitive Edge</td>
                   <td className="px-4 py-3">16 Pilots</td>
-                  <td className="px-4 py-3 text-emerald-400 font-semibold">$9.2M</td>
+                  <td className="px-4 py-3 text-primary font-semibold">$9.2M</td>
                   <td className="px-4 py-3">4.2 Months</td>
                   <td className="px-4 py-3">1,420 hrs</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-semibold text-foreground">CleanTech & Energy Grid</td>
                   <td className="px-4 py-3">12 Pilots</td>
-                  <td className="px-4 py-3 text-emerald-400 font-semibold">$11.8M</td>
+                  <td className="px-4 py-3 text-primary font-semibold">$11.8M</td>
                   <td className="px-4 py-3">6.1 Months</td>
                   <td className="px-4 py-3">2,180 hrs</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-semibold text-foreground">Industry 4.0 Robotics</td>
                   <td className="px-4 py-3">9 Pilots</td>
-                  <td className="px-4 py-3 text-emerald-400 font-semibold">$7.4M</td>
+                  <td className="px-4 py-3 text-primary font-semibold">$7.4M</td>
                   <td className="px-4 py-3">5.0 Months</td>
                   <td className="px-4 py-3">1,890 hrs</td>
                 </tr>

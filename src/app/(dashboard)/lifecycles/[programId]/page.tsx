@@ -47,7 +47,7 @@ export default function LifecycleDetailPage({ params }: { params: { programId: s
         </Card>
         <Card className="bg-card/60 p-4">
           <span className="text-[11px] text-muted-foreground block uppercase font-semibold">Target Launch Date</span>
-          <span className="text-xl font-bold text-emerald-400">Nov 15, 2026</span>
+          <span className="text-xl font-bold text-primary">Nov 15, 2026</span>
         </Card>
       </div>
 
@@ -60,9 +60,9 @@ export default function LifecycleDetailPage({ params }: { params: { programId: s
             <div key={i} className="flex items-center justify-between p-3.5 rounded-lg border border-border/50 bg-secondary/20 text-xs">
               <div className="flex items-center space-x-3">
                 {st.status === "COMPLETED" ? (
-                  <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
                 ) : st.status === "IN_PROGRESS" ? (
-                  <Clock className="h-4 w-4 text-blue-400 animate-pulse" />
+                  <Clock className="h-4 w-4 text-primary animate-pulse" />
                 ) : (
                   <GitCommit className="h-4 w-4 text-muted-foreground" />
                 )}

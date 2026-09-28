@@ -111,7 +111,7 @@ export function Sidebar() {
         <div className="rounded-lg bg-secondary/50 p-3 text-xs border border-border/50">
           <div className="font-semibold text-foreground flex items-center justify-between">
             <span>{currentProfile.name}</span>
-            <span className="text-[9px] bg-emerald-500/10 text-emerald-400 px-1.5 py-0.5 rounded font-mono">ONLINE</span>
+            <span className="text-[9px] bg-primary/10 text-primary px-1.5 py-0.5 rounded font-mono font-medium">ONLINE</span>
           </div>
           <p className="text-muted-foreground mt-1 text-[11px] leading-relaxed truncate">
             {currentProfile.title}

@@ -87,7 +87,7 @@ export default function LifecyclesPage() {
                     <span className="text-foreground">{prog.progressPercentage}%</span>
                   </div>
                   <div className="h-2 w-full bg-secondary rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full" style={{ width: prog.progressPercentage + "%" }} />
+                    <div className="h-full bg-primary rounded-full" style={{ width: prog.progressPercentage + "%" }} />
                   </div>
                 </div>
 
