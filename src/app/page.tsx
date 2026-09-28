@@ -8,7 +8,8 @@ import {
   TrendingUp, 
   ArrowRight, 
   ShieldCheck, 
-  Sparkles
+  Sparkles,
+  ChevronDown
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -58,38 +59,54 @@ export default function HomePage() {
         </div>
       </header>
 
-      <section className="relative pt-20 pb-16 sm:pt-28 sm:pb-24 text-center px-4 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-96 bg-gradient-to-b from-blue-600/15 via-indigo-600/10 to-transparent blur-3xl pointer-events-none" />
+      <section className="relative min-h-[calc(100vh-4rem)] flex flex-col justify-between items-center text-center px-4 pt-10 pb-6 overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-full bg-gradient-to-b from-blue-600/15 via-indigo-600/10 to-transparent blur-3xl pointer-events-none" />
 
-        <div className="container max-w-5xl mx-auto space-y-6 relative">
-          <div className="inline-flex items-center space-x-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1 text-xs font-medium text-blue-400 backdrop-blur">
+        {/* Top spacer to balance vertical centering */}
+        <div className="hidden md:block h-2" />
+
+        <div className="container max-w-5xl mx-auto space-y-6 sm:space-y-8 relative my-auto">
+          <div className="inline-flex items-center space-x-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1.5 text-xs font-medium text-blue-400 backdrop-blur">
             <Sparkles className="h-3.5 w-3.5" />
             <span>Unified Digital Operating System for Enterprise Innovation</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-foreground leading-[1.12]">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.12]">
             Connect Talent, Technology Assets, and Partners Through{" "}
             <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
               Orchestrated Innovation
             </span>
           </h1>
 
-          <p className="max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground leading-relaxed">
+          <p className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
             The IEO Hub connects physical-to-digital facilities, structured co-creation lifecycles, and IP discovery into a single measurable ecosystem.
           </p>
 
-          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/dashboard">
-              <Button size="lg" variant="gradient" className="w-full sm:w-auto font-semibold">
+              <Button size="lg" variant="gradient" className="w-full sm:w-auto font-semibold px-8 h-12 text-base shadow-lg shadow-blue-500/20">
                 Launch Orchestration OS <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
             <Link href="/solutions">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto px-8 h-12 text-base border-border/80">
                 Explore Solutions Catalog
               </Button>
             </Link>
           </div>
+        </div>
+
+        {/* Scroll indicator pinned at the bottom of the screen */}
+        <div className="relative pt-4 pb-2 animate-bounce">
+          <a
+            href="#pillars"
+            className="flex flex-col items-center space-y-1 text-muted-foreground hover:text-foreground transition-colors group cursor-pointer"
+          >
+            <span className="text-[11px] font-semibold tracking-widest uppercase text-muted-foreground group-hover:text-blue-400 transition-colors">
+              Scroll to explore
+            </span>
+            <ChevronDown className="h-4 w-4 text-blue-400 group-hover:translate-y-0.5 transition-transform" />
+          </a>
         </div>
       </section>
 
