@@ -23,7 +23,7 @@ export const ROLE_PROFILES: Record<UserRole, RoleProfile> = {
     organization: "NeuroMesh AI Labs",
     initials: "JH",
     badgeLabel: "Innovator Portal",
-    badgeColor: "text-primary border-primary/20 bg-primary/10",
+    badgeColor: "text-amber-400 border-amber-500/30 bg-amber-500/10",
   },
   PARTNER: {
     name: "Dr. Alex Danvers",
@@ -32,7 +32,7 @@ export const ROLE_PROFILES: Record<UserRole, RoleProfile> = {
     organization: "Global CleanTech Alliances",
     initials: "AD",
     badgeLabel: "Enterprise Partner Portal",
-    badgeColor: "text-primary border-primary/20 bg-primary/10",
+    badgeColor: "text-emerald-400 border-emerald-500/30 bg-emerald-500/10",
   },
   ADMIN: {
     name: "Sarah Lin",
@@ -41,7 +41,7 @@ export const ROLE_PROFILES: Record<UserRole, RoleProfile> = {
     organization: "IEO Ecosystem Command",
     initials: "SL",
     badgeLabel: "Hub Admin & Operator",
-    badgeColor: "text-primary border-primary/20 bg-primary/10",
+    badgeColor: "text-blue-400 border-blue-500/30 bg-blue-500/10",
   },
 };
 

@@ -33,8 +33,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
+import { LanguageSelector } from "@/components/shared/language-selector";
+import { useLanguage } from "@/contexts/language-context";
 
 export default function HomePage() {
+  const { t } = useLanguage();
   const [activeAboutTab, setActiveAboutTab] = useState<"what" | "do" | "for">("what");
   const [expandedFaq, setExpandedFaq] = useState<number | null>(0);
 
@@ -89,28 +92,25 @@ export default function HomePage() {
 
         {/* Right Actions: Language Selector + Theme Toggle + Booking / Auth CTA */}
         <div className="flex items-center space-x-2 sm:space-x-3">
-          {/* Fixed Language Selector */}
-          <div className="flex items-center space-x-1.5 px-2.5 py-1 rounded-lg border border-border/60 bg-secondary/30 text-xs font-semibold text-foreground">
-            <Globe2 className="h-3.5 w-3.5 text-muted-foreground" />
-            <span>EN</span>
-          </div>
+          {/* Interactive Language Selector with Globe icon */}
+          <LanguageSelector />
 
           {/* Theme Toggle */}
           <ThemeToggle />
 
           <Link href="/facilities">
             <Button variant="outline" size="sm" className="hidden sm:inline-flex text-xs font-semibold">
-              Book Now
+              {t("bookNow")}
             </Button>
           </Link>
           <Link href="/register">
             <Button variant="gradient" size="sm" className="text-xs font-semibold shadow-md">
-              Join Now
+              {t("joinNow")}
             </Button>
           </Link>
           <Link href="/login">
             <Button variant="ghost" size="sm" className="text-xs font-semibold">
-              Sign In
+              {t("signIn")}
             </Button>
           </Link>
         </div>
@@ -127,29 +127,29 @@ export default function HomePage() {
           {/* Eyebrow Tagline */}
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary">
             <Sparkles className="h-3.5 w-3.5" />
-            <span>Powering innovation & collaboration</span>
+            <span>{t("tagline")}</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.12]">
-            Turn your ideas into reality with the power of{" "}
+            {t("heroTitlePrefix")}{" "}
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
-              SUPER 5G and AI.
+              {t("heroTitleAccent")}
             </span>
           </h1>
 
           <p className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-            The Enterprise Innovation Platform (IEO Hub) connects physical facilities, structured co-creation lifecycles, and IP discovery into a single measurable operating system.
+            {t("heroDesc")}
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/register">
               <Button size="lg" variant="gradient" className="w-full sm:w-auto font-semibold px-8 h-12 text-base shadow-xl shadow-blue-500/20">
-                Start your journey <ArrowRight className="ml-2 h-4 w-4" />
+                {t("startJourney")} <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
             <a href="#about">
               <Button size="lg" variant="outline" className="w-full sm:w-auto px-8 h-12 text-base border-border">
-                Discover IEO Framework
+                {t("discoverFramework")}
               </Button>
             </a>
           </div>
@@ -162,7 +162,7 @@ export default function HomePage() {
             className="flex flex-col items-center space-y-1 text-muted-foreground hover:text-foreground transition-colors group cursor-pointer"
           >
             <span className="text-[11px] font-semibold tracking-widest uppercase text-muted-foreground group-hover:text-primary transition-colors">
-              Scroll to explore
+              {t("scrollToExplore")}
             </span>
             <ChevronDown className="h-4 w-4 text-primary group-hover:translate-y-0.5 transition-transform" />
           </a>
@@ -174,13 +174,13 @@ export default function HomePage() {
         <div className="container max-w-6xl mx-auto space-y-10">
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <Badge variant="outline" className="text-xs uppercase tracking-wider text-primary border-primary/30">
-              About the Platform
+              {t("aboutBadge")}
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-              A Strategic Foundation for Innovation
+              {t("aboutTitle")}
             </h2>
             <p className="text-sm text-muted-foreground">
-              Built on 5G-Advanced and AI to accelerate enterprise innovation and digital adoption in line with national technology mandates.
+              {t("aboutDesc")}
             </p>
           </div>
 
@@ -195,7 +195,7 @@ export default function HomePage() {
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                What is IEO Hub
+                {t("tabWhat")}
               </button>
               <button
                 onClick={() => setActiveAboutTab("do")}
@@ -205,7 +205,7 @@ export default function HomePage() {
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                What We Do
+                {t("tabDo")}
               </button>
               <button
                 onClick={() => setActiveAboutTab("for")}
@@ -215,7 +215,7 @@ export default function HomePage() {
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                Who It Is For
+                {t("tabFor")}
               </button>
             </div>
           </div>
@@ -228,27 +228,27 @@ export default function HomePage() {
                   <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold">
                     <Radio className="h-5 w-5" />
                   </div>
-                  <h3 className="text-2xl font-bold">What is IEO Hub?</h3>
+                  <h3 className="text-2xl font-bold">{t("whatTitle")}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    The Enterprise Innovation Platform (IEO Hub) is a strategic initiative designed to accelerate <strong>5G-Advanced (5G-A)</strong> and <strong>Artificial Intelligence (AI)</strong> adoption for Malaysian and regional enterprises.
+                    {t("whatDesc1")}
                   </p>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    It acts as a digital and physical bridge linking real-world infrastructure (MakerLabs, cleanrooms, immersive XR arenas) with commercial industry opportunities.
+                    {t("whatDesc2")}
                   </p>
                   <div className="pt-2">
                     <Link href="/register">
                       <Button variant="outline" size="sm" className="text-xs font-semibold">
-                        Join EIP <ChevronRight className="h-3.5 w-3.5 ml-1" />
+                        {t("joinEip")} <ChevronRight className="h-3.5 w-3.5 ml-1" />
                       </Button>
                     </Link>
                   </div>
                 </div>
                 <div className="p-6 rounded-xl bg-secondary/30 border border-border/50 space-y-3">
-                  <h4 className="text-xs uppercase font-bold tracking-wider text-primary">Core Tenets</h4>
+                  <h4 className="text-xs uppercase font-bold tracking-wider text-primary">{t("coreTenets")}</h4>
                   <div className="space-y-2.5 text-xs text-muted-foreground">
-                    <div className="flex items-start"><CheckCircle2 className="h-4 w-4 text-primary mr-2 shrink-0 mt-0.5" /> High-speed low-latency 5G-A edge connectivity</div>
-                    <div className="flex items-start"><CheckCircle2 className="h-4 w-4 text-primary mr-2 shrink-0 mt-0.5" /> Physical testing labs for microelectronics & robotics</div>
-                    <div className="flex items-start"><CheckCircle2 className="h-4 w-4 text-primary mr-2 shrink-0 mt-0.5" /> Stage-gate corporate incubation and pilot financing</div>
+                    <div className="flex items-start"><CheckCircle2 className="h-4 w-4 text-primary mr-2 shrink-0 mt-0.5" /> {t("tenet1")}</div>
+                    <div className="flex items-start"><CheckCircle2 className="h-4 w-4 text-primary mr-2 shrink-0 mt-0.5" /> {t("tenet2")}</div>
+                    <div className="flex items-start"><CheckCircle2 className="h-4 w-4 text-primary mr-2 shrink-0 mt-0.5" /> {t("tenet3")}</div>
                   </div>
                 </div>
               </div>
@@ -260,30 +260,30 @@ export default function HomePage() {
                   <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold">
                     <Layers className="h-5 w-5" />
                   </div>
-                  <h3 className="text-2xl font-bold">What We Do</h3>
+                  <h3 className="text-2xl font-bold">{t("doTitle")}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    IEO Hub serves as a <strong>neutral foundation</strong> that integrates physical tools, enterprise stakeholders, and funding resources, enabling friction-free collaboration and commercialization.
+                    {t("doDesc1")}
                   </p>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    We guide technological solutions through verification, live telemetry testing, and enterprise proof-of-concepts (PoC).
+                    {t("doDesc2")}
                   </p>
                 </div>
                 <div className="grid grid-cols-2 gap-3 text-center">
                   <div className="p-4 rounded-xl border border-border/60 bg-secondary/20">
                     <div className="text-2xl font-bold text-foreground">42+</div>
-                    <div className="text-[11px] text-muted-foreground mt-1">Pre-commercial Assets</div>
+                    <div className="text-[11px] text-muted-foreground mt-1">{t("statAssets")}</div>
                   </div>
                   <div className="p-4 rounded-xl border border-border/60 bg-secondary/20">
                     <div className="text-2xl font-bold text-primary">88.4%</div>
-                    <div className="text-[11px] text-muted-foreground mt-1">Hub Space Utilization</div>
+                    <div className="text-[11px] text-muted-foreground mt-1">{t("statUtilization")}</div>
                   </div>
                   <div className="p-4 rounded-xl border border-border/60 bg-secondary/20">
                     <div className="text-2xl font-bold text-primary">128+</div>
-                    <div className="text-[11px] text-muted-foreground mt-1">Ecosystem Partners</div>
+                    <div className="text-[11px] text-muted-foreground mt-1">{t("statPartners")}</div>
                   </div>
                   <div className="p-4 rounded-xl border border-border/60 bg-secondary/20">
                     <div className="text-2xl font-bold text-primary">37+</div>
-                    <div className="text-[11px] text-muted-foreground mt-1">Live Industry Pilots</div>
+                    <div className="text-[11px] text-muted-foreground mt-1">{t("statPilots")}</div>
                   </div>
                 </div>
               </div>
@@ -292,9 +292,9 @@ export default function HomePage() {
             {activeAboutTab === "for" && (
               <div className="space-y-6">
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-bold">A Playing Ground for Visionaries</h3>
+                  <h3 className="text-2xl font-bold">{t("forTitle")}</h3>
                   <p className="text-sm text-muted-foreground">
-                    IEO Hub unites stakeholders across Malaysia’s digital and industrial ecosystem:
+                    {t("forDesc")}
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-2.5 pt-2">
@@ -328,13 +328,13 @@ export default function HomePage() {
         <div className="container max-w-6xl mx-auto space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <Badge variant="outline" className="text-xs uppercase tracking-wider text-primary border-primary/30">
-              Structured Methodology
+              {t("journeyBadge")}
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-              We Drive the Innovation Journey
+              {t("journeyTitle")}
             </h2>
             <p className="text-sm text-muted-foreground">
-              A structured stage-gate approach that guides enterprises, agencies, and innovators from problem statements to refined, market-tested solutions.
+              {t("journeyDesc")}
             </p>
           </div>
 
@@ -343,9 +343,9 @@ export default function HomePage() {
               <div className="h-8 w-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">
                 01
               </div>
-              <h3 className="text-base font-bold text-foreground">Frame & Ideate</h3>
+              <h3 className="text-base font-bold text-foreground">{t("stage1Title")}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Define commercial challenge statements with industry mentors, examine IP patents, and align architectural goals.
+                {t("stage1Desc")}
               </p>
             </div>
 
@@ -353,9 +353,9 @@ export default function HomePage() {
               <div className="h-8 w-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">
                 02
               </div>
-              <h3 className="text-base font-bold text-foreground">Develop</h3>
+              <h3 className="text-base font-bold text-foreground">{t("stage2Title")}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Engineer rapid prototypes inside MakerLabs using industrial 5-axis CNCs, SLA 3D printers, and edge AI kits.
+                {t("stage2Desc")}
               </p>
             </div>
 
@@ -363,9 +363,9 @@ export default function HomePage() {
               <div className="h-8 w-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">
                 03
               </div>
-              <h3 className="text-base font-bold text-foreground">Test</h3>
+              <h3 className="text-base font-bold text-foreground">{t("stage3Title")}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Validate low-latency wireless transmission, microfluidic sensing in Cleanrooms, and spatial audio in XR Studios.
+                {t("stage3Desc")}
               </p>
             </div>
 
@@ -373,9 +373,9 @@ export default function HomePage() {
               <div className="h-8 w-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">
                 04
               </div>
-              <h3 className="text-base font-bold text-foreground">Demo & Scale</h3>
+              <h3 className="text-base font-bold text-foreground">{t("stage4Title")}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Showcase verified outcomes to enterprises, agencies, and investors in the Executive Alliance Arena for commercial contracts.
+                {t("stage4Desc")}
               </p>
             </div>
           </div>
@@ -486,46 +486,46 @@ export default function HomePage() {
         <div className="container max-w-6xl mx-auto space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <Badge variant="outline" className="text-xs uppercase tracking-wider text-primary border-primary/30">
-              Ecosystem Enablement
+              {t("offerBadge")}
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-              What We Offer
+              {t("offerTitle")}
             </h2>
             <p className="text-sm text-muted-foreground">
-              Access comprehensive technical, industry, and funding support at every phase of your innovation lifecycle.
+              {t("offerDesc")}
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-6 rounded-2xl border border-border/60 bg-card/60 space-y-2">
               <Building2 className="h-6 w-6 text-primary" />
-              <h3 className="font-bold text-sm text-foreground">World-Class Facilities</h3>
+              <h3 className="font-bold text-sm text-foreground">{t("offer1Title")}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                ISO Class 6 Cleanrooms, rapid SLA 3D printing labs, spatial audio isolation chambers, and alliance pitch auditoriums.
+                {t("offer1Desc")}
               </p>
             </div>
 
             <div className="p-6 rounded-2xl border border-border/60 bg-card/60 space-y-2">
               <Users className="h-6 w-6 text-primary" />
-              <h3 className="font-bold text-sm text-foreground">Industry Mentors</h3>
+              <h3 className="font-bold text-sm text-foreground">{t("offer2Title")}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Direct advisory from telco network architects, enterprise CIOs, patent attorneys, and venture capital partners.
+                {t("offer2Desc")}
               </p>
             </div>
 
             <div className="p-6 rounded-2xl border border-border/60 bg-card/60 space-y-2">
               <ShieldCheck className="h-6 w-6 text-primary" />
-              <h3 className="font-bold text-sm text-foreground">Regulatory Sandbox</h3>
+              <h3 className="font-bold text-sm text-foreground">{t("offer3Title")}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Safe testing zone conforming to MCMC, eIDAS 2.0, and national standards for rapid live compliance validation.
+                {t("offer3Desc")}
               </p>
             </div>
 
             <div className="p-6 rounded-2xl border border-border/60 bg-card/60 space-y-2">
               <TrendingUp className="h-6 w-6 text-primary" />
-              <h3 className="font-bold text-sm text-foreground">Capital & Pilot Co-Creation</h3>
+              <h3 className="font-bold text-sm text-foreground">{t("offer4Title")}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Bilateral corporate matching, POC sponsorships, and direct procurement channels into enterprise supply chains.
+                {t("offer4Desc")}
               </p>
             </div>
           </div>
@@ -537,11 +537,11 @@ export default function HomePage() {
         <div className="container max-w-6xl mx-auto space-y-10 text-center">
           <div className="max-w-2xl mx-auto space-y-2">
             <Badge variant="outline" className="text-xs uppercase tracking-wider text-foreground">
-              Strategic Alliances
+              {t("ecosystemBadge")}
             </Badge>
-            <h2 className="text-3xl font-extrabold tracking-tight">Our Ecosystem</h2>
+            <h2 className="text-3xl font-extrabold tracking-tight">{t("ecosystemTitle")}</h2>
             <p className="text-sm text-muted-foreground">
-              IEO Hub collaborates with anchor technology partners, premier universities, ministries, and agencies to strengthen national innovation capabilities.
+              {t("ecosystemDesc")}
             </p>
           </div>
 
@@ -573,12 +573,12 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
               <Badge variant="outline" className="text-xs uppercase tracking-wider text-primary border-primary/30">
-                Newsroom & Milestones
+                {t("newsroomBadge")}
               </Badge>
-              <h2 className="text-3xl font-extrabold tracking-tight">Latest Events & Case Studies</h2>
+              <h2 className="text-3xl font-extrabold tracking-tight">{t("newsroomTitle")}</h2>
             </div>
             <Link href="/login" className="text-xs font-semibold text-primary hover:underline flex items-center">
-              View All Press Releases <ChevronRight className="h-4 w-4 ml-0.5" />
+              {t("viewAllPress")} <ChevronRight className="h-4 w-4 ml-0.5" />
             </Link>
           </div>
 
@@ -642,11 +642,11 @@ export default function HomePage() {
         <div className="container max-w-4xl mx-auto space-y-10">
           <div className="text-center space-y-2">
             <Badge variant="outline" className="text-xs uppercase tracking-wider text-foreground">
-              Knowledge Base
+              {t("faqBadge")}
             </Badge>
-            <h2 className="text-3xl font-extrabold tracking-tight">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-extrabold tracking-tight">{t("faqTitle")}</h2>
             <p className="text-sm text-muted-foreground">
-              Everything you need to know about joining, booking, and collaborating in the IEO Hub.
+              {t("faqDesc")}
             </p>
           </div>
 
@@ -681,20 +681,20 @@ export default function HomePage() {
       <section className="py-16 border-t border-border/40 bg-gradient-to-r from-blue-600/10 via-purple-600/5 to-indigo-600/10 dark:from-blue-950/40 dark:via-card dark:to-purple-950/40 px-6 text-center">
         <div className="container max-w-4xl mx-auto space-y-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">
-            Develop, test and demonstrate future-ready solutions.
+            {t("ctaTitle")}
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
-            Join the EIP today to connect talent, technology assets, and enterprise partners through orchestrated innovation.
+            {t("ctaDesc")}
           </p>
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link href="/register">
               <Button size="lg" variant="gradient" className="w-full sm:w-auto font-semibold px-8 shadow-xl shadow-blue-500/20">
-                Join EIP
+                {t("joinEip")}
               </Button>
             </Link>
             <Link href="/facilities">
               <Button size="lg" variant="outline" className="w-full sm:w-auto px-8 border-border">
-                Book Hub Facilities
+                {t("bookFacilities")}
               </Button>
             </Link>
           </div>

@@ -103,7 +103,7 @@ export default function LoginPage() {
                     callbackUrl: "/dashboard",
                   });
                 }}
-                className="p-2 rounded-lg border border-border bg-secondary/60 text-foreground hover:bg-primary hover:text-primary-foreground text-center transition-all text-xs font-medium"
+                className="p-2 rounded-lg border border-amber-500/30 bg-amber-500/10 text-amber-300 hover:bg-amber-500/20 text-center transition-all text-xs font-medium"
               >
                 🔬 Innovator
               </button>
@@ -119,7 +119,7 @@ export default function LoginPage() {
                     callbackUrl: "/dashboard",
                   });
                 }}
-                className="p-2 rounded-lg border border-border bg-secondary/60 text-foreground hover:bg-primary hover:text-primary-foreground text-center transition-all text-xs font-medium"
+                className="p-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 text-center transition-all text-xs font-medium"
               >
                 🤝 Partner
               </button>
@@ -135,7 +135,7 @@ export default function LoginPage() {
                     callbackUrl: "/dashboard",
                   });
                 }}
-                className="p-2 rounded-lg border border-border bg-secondary/60 text-foreground hover:bg-primary hover:text-primary-foreground text-center transition-all text-xs font-medium"
+                className="p-2 rounded-lg border border-blue-500/30 bg-blue-500/10 text-blue-300 hover:bg-blue-500/20 text-center transition-all text-xs font-medium"
               >
                 ⚙️ Admin
               </button>

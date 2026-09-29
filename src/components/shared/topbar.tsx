@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useRole, UserRole } from "@/contexts/role-context";
+import { LanguageSelector } from "@/components/shared/language-selector";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 
 export function Topbar() {
@@ -38,7 +39,7 @@ export function Topbar() {
           <div>
             <div className="flex items-center space-x-2">
               <span className="font-bold text-base text-foreground tracking-tight">IEO Hub</span>
-              <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">
+              <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
                 ORCHESTRATION OS
               </span>
             </div>
@@ -84,15 +85,18 @@ export function Topbar() {
           {currentProfile.badgeLabel}
         </Badge>
 
+        {/* Language Selector */}
+        <LanguageSelector />
+
+        {/* Theme Toggle */}
+        <ThemeToggle />
+
         {/* Public Showcase Link */}
         <Link href="/" className="hidden md:inline-flex">
           <Button variant="ghost" size="sm" className="text-xs text-muted-foreground hover:text-foreground">
             ← Public Portal
           </Button>
         </Link>
-
-        {/* Theme Toggle */}
-        <ThemeToggle />
 
         {/* Notifications */}
         <Button variant="ghost" size="icon" aria-label="Notifications" className="text-muted-foreground hover:text-foreground">
@@ -118,7 +122,7 @@ export function Topbar() {
           size="icon"
           title="Sign Out to Public Showcase"
           onClick={() => signOut({ callbackUrl: "/" })}
-          className="text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
+          className="text-muted-foreground hover:text-rose-400 hover:bg-rose-500/10 transition-colors"
         >
           <LogOut className="h-4 w-4" />
         </Button>

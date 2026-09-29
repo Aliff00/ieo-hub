@@ -34,7 +34,7 @@ export default function RegisterPage() {
             />
           </div>
           <CardTitle className="text-2xl font-bold tracking-tight mt-3">
-            Join EIP
+            Join the IEO Ecosystem
           </CardTitle>
           <CardDescription className="text-xs">
             Connect your talent, assets, and enterprise partner unit
