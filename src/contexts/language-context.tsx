@@ -23,7 +23,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     heroTitlePrefix: "Turn your ideas into reality with the power of",
     heroTitleAccent: "SUPER 5G and AI.",
-    heroDesc: "The Enterprise Innovation Platform (IEO Hub) connects physical facilities, structured co-creation lifecycles, and IP discovery into a single measurable operating system.",
+    heroDesc: "IEO - Innovation Ecosystem and Orchestration connects physical facilities, structured co-creation lifecycles, and IP discovery into a single measurable operating system.",
     startJourney: "Start your journey",
     discoverFramework: "Discover IEO Framework",
     scrollToExplore: "Scroll to explore",
@@ -32,13 +32,13 @@ const translations: Record<Language, Record<string, string>> = {
     aboutBadge: "About the Platform",
     aboutTitle: "A Strategic Foundation for Innovation",
     aboutDesc: "Accelerating 5G-Advanced and AI adoption for Malaysian and global enterprises.",
-    tabWhat: "What is EIP",
+    tabWhat: "What is IEO",
     tabDo: "What We Do",
-    tabFor: "Who EIP is For",
+    tabFor: "Who IEO is For",
     whatTitle: "What is IEO Hub?",
-    whatDesc1: "The Enterprise Innovation Platform (IEO Hub) is a strategic initiative designed to accelerate 5G-Advanced (5G-A) and Artificial Intelligence (AI) adoption for Malaysian and regional enterprises.",
+    whatDesc1: "IEO - Innovation Ecosystem and Orchestration is a strategic initiative designed to accelerate 5G-Advanced (5G-A) and Artificial Intelligence (AI) adoption for Malaysian and regional enterprises.",
     whatDesc2: "It acts as a digital and physical bridge linking real-world infrastructure (MakerLabs, cleanrooms, immersive XR arenas) with commercial industry opportunities.",
-    joinEip: "Join EIP",
+    joinEip: "Join IEO",
     coreTenets: "Core Tenets",
     tenet1: "High-speed low-latency 5G-A edge connectivity",
     tenet2: "Physical testing labs for microelectronics & robotics",
@@ -101,7 +101,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Pre-footer
     ctaTitle: "Develop, test and demonstrate future-ready solutions.",
-    ctaDesc: "Join the EIP today to connect talent, technology assets, and enterprise partners through orchestrated innovation.",
+    ctaDesc: "Join IEO - Innovation Ecosystem and Orchestration today to connect talent, technology assets, and enterprise partners through orchestrated innovation.",
     bookFacilities: "Book Hub Facilities",
   },
   bm: {
@@ -116,7 +116,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     heroTitlePrefix: "Tukarkan idea anda kepada realiti dengan kuasa",
     heroTitleAccent: "SUPER 5G dan AI.",
-    heroDesc: "Platform Inovasi Perusahaan (IEO Hub) menghubungkan fasiliti fizikal, kitaran hayat penciptaan bersama berstruktur, dan penemuan IP ke dalam satu sistem operasi yang boleh diukur.",
+    heroDesc: "IEO - Inovasi, Ekosistem dan Orkestrasi menghubungkan fasiliti fizikal, kitaran hayat penciptaan bersama berstruktur, dan penemuan IP ke dalam satu sistem operasi yang boleh diukur.",
     startJourney: "Mulakan langkah anda",
     discoverFramework: "Ketahui Rangka Kerja IEO",
     scrollToExplore: "Tatal untuk terokai",
@@ -125,13 +125,13 @@ const translations: Record<Language, Record<string, string>> = {
     aboutBadge: "Mengenai Platform",
     aboutTitle: "Asas Strategik untuk Inovasi",
     aboutDesc: "Mempercepatkan penggunaan 5G-Lanjutan dan AI untuk perusahaan Malaysia dan serantau.",
-    tabWhat: "Apakah EIP",
+    tabWhat: "Apakah IEO",
     tabDo: "Peranan Kami",
-    tabFor: "Sasaran EIP",
+    tabFor: "Sasaran IEO",
     whatTitle: "Apakah IEO Hub?",
-    whatDesc1: "Platform Inovasi Perusahaan (IEO Hub) ialah inisiatif strategik yang direka untuk mempercepatkan penggunaan 5G-Lanjutan (5G-A) dan Kecerdasan Buatan (AI) bagi perusahaan di Malaysia dan serantau.",
+    whatDesc1: "IEO - Inovasi, Ekosistem dan Orkestrasi ialah inisiatif strategik yang direka untuk mempercepatkan penggunaan 5G-Lanjutan (5G-A) dan Kecerdasan Buatan (AI) bagi perusahaan di Malaysia dan serantau.",
     whatDesc2: "Ia bertindak sebagai jambatan digital dan fizikal yang menghubungkan infrastruktur dunia nyata (MakerLabs, bilik bersih, arena XR imersif) dengan peluang industri komersial.",
-    joinEip: "Sertai EIP",
+    joinEip: "Sertai IEO",
     coreTenets: "Teras Utama",
     tenet1: "Sambungan pinggir 5G-A berkecepatan tinggi dengan kependaman rendah",
     tenet2: "Makmal ujian fizikal untuk mikroelektronik & robotik",
@@ -194,7 +194,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Pre-footer
     ctaTitle: "Bina, uji dan demonstrasikan penyelesaian masa hadapan.",
-    ctaDesc: "Sertai EIP hari ini untuk menghubungkan bakat, aset teknologi, dan rakan kongsi perusahaan melalui inovasi terorkestra.",
+    ctaDesc: "Sertai IEO - Inovasi, Ekosistem dan Orkestrasi hari ini untuk menghubungkan bakat, aset teknologi, dan rakan kongsi perusahaan melalui inovasi terorkestra.",
     bookFacilities: "Tempah Fasiliti Hub",
   },
   zh: {
@@ -209,7 +209,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     heroTitlePrefix: "依托领先力量将构想转化为现实",
     heroTitleAccent: "SUPER 5G 与 AI",
-    heroDesc: "企业创新平台 (IEO Hub) 将物理测试空间、结构化共创生命周期与专利资产发现融为一体，构建量化数字操作系统。",
+    heroDesc: "IEO - 创新、生态与协同编排 (Innovation Ecosystem and Orchestration) 将物理测试空间、结构化共创生命周期与专利资产发现融为一体，构建量化数字操作系统。",
     startJourney: "开启创新之旅",
     discoverFramework: "探索 IEO 架构",
     scrollToExplore: "向下滚动探索",
@@ -218,13 +218,13 @@ const translations: Record<Language, Record<string, string>> = {
     aboutBadge: "关于平台",
     aboutTitle: "企业创新的战略基石",
     aboutDesc: "加速 5G 进阶版 (5G-A) 与人工智能技术在马来西亚及区域企业的规模化落地。",
-    tabWhat: "什么是 EIP",
+    tabWhat: "什么是 IEO",
     tabDo: "核心业务",
     tabFor: "赋能对象",
     whatTitle: "什么是 IEO Hub？",
-    whatDesc1: "企业创新平台 (IEO Hub) 是一项前瞻性战略倡议，旨在推动 5G-Advanced 与人工智能 (AI) 赋能各行业伙伴与前沿先锋。",
+    whatDesc1: "IEO - 创新、生态与协同编排 (Innovation Ecosystem and Orchestration) 是一项前瞻性战略倡议，旨在推动 5G-Advanced 与人工智能 (AI) 赋能各行业伙伴与前沿先锋。",
     whatDesc2: "作为连接真实物理设施（创客实验室、洁净室、沉浸式 XR 空间）与商业采购机遇的关键桥梁。",
-    joinEip: "加入 EIP",
+    joinEip: "加入 IEO",
     coreTenets: "核心原则",
     tenet1: "高速率、低延迟的 5G-A 边缘连接",
     tenet2: "微电子与工业机器人物理验证测试舱",
@@ -287,7 +287,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Pre-footer
     ctaTitle: "研发、测试并向世界展示面向未来的前沿方案",
-    ctaDesc: "立即加入 EIP，通过精准的协同编排，无缝联结顶尖人才、技术专利与企业采购需求。",
+    ctaDesc: "立即加入 IEO - 创新、生态与协同编排 (Innovation Ecosystem and Orchestration)，通过精准的协同编排，无缝联结顶尖人才、技术专利与企业采购需求。",
     bookFacilities: "预约测试设施",
   }
 };
