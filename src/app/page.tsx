@@ -119,7 +119,7 @@ export default function HomePage() {
       {/* 3. Hero Section (Full Viewport on Desktop) */}
       <section className="relative min-h-[calc(100vh-4rem)] flex flex-col justify-between items-center text-center px-4 pt-12 pb-6 overflow-hidden">
         {/* Ambient Gradient Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-full bg-gradient-to-b from-primary/10 via-primary/5 to-transparent blur-3xl pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-full bg-gradient-to-b from-blue-600/15 via-indigo-600/10 to-transparent blur-3xl pointer-events-none" />
 
         <div className="hidden md:block h-2" />
 
@@ -132,7 +132,7 @@ export default function HomePage() {
 
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.12]">
             Turn your ideas into reality with the power of{" "}
-            <span className="text-primary">
+            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
               SUPER 5G and AI.
             </span>
           </h1>
@@ -143,7 +143,7 @@ export default function HomePage() {
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/register">
-              <Button size="lg" variant="gradient" className="w-full sm:w-auto font-semibold px-8 h-12 text-base shadow-lg shadow-primary/20">
+              <Button size="lg" variant="gradient" className="w-full sm:w-auto font-semibold px-8 h-12 text-base shadow-xl shadow-blue-500/20">
                 Start your journey <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -678,7 +678,7 @@ export default function HomePage() {
       </section>
 
       {/* 11. Pre-Footer Call to Action Banner */}
-      <section className="py-16 border-t border-border/40 bg-gradient-to-r from-primary/10 via-card to-primary/10 px-6 text-center">
+      <section className="py-16 border-t border-border/40 bg-gradient-to-r from-blue-600/10 via-purple-600/5 to-indigo-600/10 dark:from-blue-950/40 dark:via-card dark:to-purple-950/40 px-6 text-center">
         <div className="container max-w-4xl mx-auto space-y-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">
             Develop, test and demonstrate future-ready solutions.
@@ -688,7 +688,7 @@ export default function HomePage() {
           </p>
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link href="/register">
-              <Button size="lg" variant="gradient" className="w-full sm:w-auto font-semibold px-8 shadow-lg shadow-primary/20">
+              <Button size="lg" variant="gradient" className="w-full sm:w-auto font-semibold px-8 shadow-xl shadow-blue-500/20">
                 Join EIP
               </Button>
             </Link>

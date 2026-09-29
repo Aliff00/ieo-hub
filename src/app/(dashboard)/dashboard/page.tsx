@@ -272,7 +272,7 @@ export default function DashboardPage() {
                 </Badge>
               </div>
               <div className="w-full bg-secondary rounded-full h-1.5 overflow-hidden">
-                <div className="bg-primary h-1.5 rounded-full" style={{ width: "65%" }}></div>
+                <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 h-1.5 rounded-full" style={{ width: "65%" }}></div>
               </div>
               <div className="flex justify-between text-[11px] text-muted-foreground pt-1">
                 <span>Milestone: Pilot Validation Gate</span>
@@ -288,7 +288,7 @@ export default function DashboardPage() {
                 </Badge>
               </div>
               <div className="w-full bg-secondary rounded-full h-1.5 overflow-hidden">
-                <div className="bg-primary h-1.5 rounded-full" style={{ width: "88%" }}></div>
+                <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 h-1.5 rounded-full" style={{ width: "88%" }}></div>
               </div>
               <div className="flex justify-between text-[11px] text-muted-foreground pt-1">
                 <span>Milestone: Factory SCADA Integration</span>
