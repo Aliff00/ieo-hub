@@ -27,7 +27,11 @@ import {
   Radio,
   Eye,
   Bot,
-  Plane
+  Plane,
+  Leaf,
+  Landmark,
+  GraduationCap,
+  Cloud
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
@@ -62,6 +66,17 @@ export default function HomePage() {
       q: "How does IEO Hub protect Intellectual Property (IP)?",
       a: "Innovators retain ownership of their proprietary IP. Co-creation lifecycles operate under clear institutional sandbox agreements and non-disclosure frameworks overseen by ecosystem governance."
     }
+  ];
+
+  const ecosystemPartners = [
+    { name: "Telecommunications Providers", category: "Core 5G-A Network", icon: Radio },
+    { name: "Industrial Robotics Institutes", category: "Advanced Automation", icon: Bot },
+    { name: "Cognitive Systems Labs", category: "Edge AI & Compute", icon: Cpu },
+    { name: "CleanTech Research Centers", category: "Sustainable Tech", icon: Leaf },
+    { name: "Digital Economy Agencies", category: "Public Sector", icon: Landmark },
+    { name: "Venture Capital Alliances", category: "Growth Capital", icon: TrendingUp },
+    { name: "University Science Parks", category: "Academic Research", icon: GraduationCap },
+    { name: "Global Cloud Leaders", category: "Hyperscale Cloud", icon: Cloud },
   ];
 
   return (
@@ -533,8 +548,8 @@ export default function HomePage() {
       </section>
 
       {/* 8. "Our Ecosystem & Partners" Section */}
-      <section id="ecosystem" className="py-20 border-t border-border/40 bg-card/20 px-6">
-        <div className="container max-w-6xl mx-auto space-y-10 text-center">
+      <section id="ecosystem" className="py-20 border-t border-border/40 bg-card/20 overflow-hidden">
+        <div className="container max-w-6xl mx-auto space-y-10 text-center px-6">
           <div className="max-w-2xl mx-auto space-y-2">
             <Badge variant="outline" className="text-xs uppercase tracking-wider text-foreground">
               {t("ecosystemBadge")}
@@ -544,25 +559,37 @@ export default function HomePage() {
               {t("ecosystemDesc")}
             </p>
           </div>
+        </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto pt-4">
-            {[
-              "Telecommunications Providers",
-              "Industrial Robotics Institutes",
-              "Cognitive Systems Labs",
-              "CleanTech Research Centers",
-              "Digital Economy Agencies",
-              "Venture Capital Alliances",
-              "University Science Parks",
-              "Global Cloud Leaders"
-            ].map((partner) => (
-              <div
-                key={partner}
-                className="p-4 rounded-xl border border-border/60 bg-card/70 flex items-center justify-center text-xs font-semibold text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors"
-              >
-                {partner}
-              </div>
-            ))}
+        {/* Continuous Moving Horizontal Logos Track (Right to Left) */}
+        <div className="relative w-full overflow-hidden mt-10">
+          {/* Subtle gradient edge masks for smooth fade in/out */}
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-background via-background/80 to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-background via-background/80 to-transparent z-10" />
+
+          {/* Marquee Row */}
+          <div className="flex animate-marquee gap-4 sm:gap-6 py-3">
+            {[...ecosystemPartners, ...ecosystemPartners].map((partner, idx) => {
+              const Icon = partner.icon;
+              return (
+                <div
+                  key={`${partner.name}-${idx}`}
+                  className="group flex items-center space-x-3.5 px-5 py-3.5 rounded-2xl border border-border/70 bg-card/85 backdrop-blur-sm shadow-xs hover:border-primary/60 hover:bg-card hover:shadow-lg hover:shadow-primary/5 transition-all duration-200 shrink-0 cursor-default select-none"
+                >
+                  <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-200">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <div className="text-left">
+                    <div className="text-xs font-bold text-foreground group-hover:text-primary transition-colors whitespace-nowrap">
+                      {partner.name}
+                    </div>
+                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">
+                      {partner.category}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
