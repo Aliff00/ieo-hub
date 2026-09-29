@@ -13,7 +13,7 @@ export interface LanguageContextType {
 const translations: Record<Language, Record<string, string>> = {
   en: {
     // Nav & Brand
-    tagline: "Powering innovation & collaboration",
+    tagline: "NEXT-GEN INFRASTRUCTURE & INDUSTRIAL AI",
     subBrand: "Innovation • Ecosystem • Orchestration",
     bookNow: "Book Now",
     joinNow: "Join Now",
@@ -21,11 +21,11 @@ const translations: Record<Language, Record<string, string>> = {
     publicPortal: "← Public Portal",
     
     // Hero
-    heroTitlePrefix: "Turn your ideas into reality with the power of",
-    heroTitleAccent: "SUPER 5G and AI.",
-    heroDesc: "IEO - Innovation Ecosystem and Orchestration connects physical facilities, structured co-creation lifecycles, and IP discovery into a single measurable operating system.",
-    startJourney: "Start your journey",
-    discoverFramework: "Discover IEO Framework",
+    heroTitlePrefix: "Orchestrating the Future of",
+    heroTitleAccent: "5G-Advanced and Applied AI",
+    heroDesc: "IEO Hub unifies ISO-certified physical labs, deterministic edge compute, and corporate co-creation pipelines into a single measurable operating system.",
+    startJourney: "Book Facility Access",
+    discoverFramework: "Explore Stage-Gate Pilots",
     scrollToExplore: "Scroll to explore",
 
     // About Section
@@ -106,7 +106,7 @@ const translations: Record<Language, Record<string, string>> = {
   },
   bm: {
     // Nav & Brand
-    tagline: "Memperkasa inovasi & kolaborasi",
+    tagline: "INFRASTRUKTUR GENERASI BAHARU & AI INDUSTRI",
     subBrand: "Inovasi • Ekosistem • Orkestrasi",
     bookNow: "Tempah Sekarang",
     joinNow: "Sertai Sekarang",
@@ -114,11 +114,11 @@ const translations: Record<Language, Record<string, string>> = {
     publicPortal: "← Portal Awam",
     
     // Hero
-    heroTitlePrefix: "Tukarkan idea anda kepada realiti dengan kuasa",
-    heroTitleAccent: "SUPER 5G dan AI.",
-    heroDesc: "IEO - Inovasi, Ekosistem dan Orkestrasi menghubungkan fasiliti fizikal, kitaran hayat penciptaan bersama berstruktur, dan penemuan IP ke dalam satu sistem operasi yang boleh diukur.",
-    startJourney: "Mulakan langkah anda",
-    discoverFramework: "Ketahui Rangka Kerja IEO",
+    heroTitlePrefix: "Mengorkestrasikan Masa Hadapan",
+    heroTitleAccent: "5G-Lanjutan dan AI Gunaan",
+    heroDesc: "IEO Hub menyatukan makmal fizikal yang diperakui ISO, pengkomputeran pinggir deterministik, dan saluran penciptaan bersama korporat ke dalam satu sistem operasi yang boleh diukur.",
+    startJourney: "Tempah Akses Fasiliti",
+    discoverFramework: "Terokai Rintis Stage-Gate",
     scrollToExplore: "Tatal untuk terokai",
 
     // About Section
@@ -199,7 +199,7 @@ const translations: Record<Language, Record<string, string>> = {
   },
   zh: {
     // Nav & Brand
-    tagline: "驱动创新与跨界合作",
+    tagline: "下一代数字基建与工业级 AI",
     subBrand: "创新 • 生态 • 编排管理",
     bookNow: "立即预约",
     joinNow: "立即加入",
@@ -207,11 +207,11 @@ const translations: Record<Language, Record<string, string>> = {
     publicPortal: "← 公共门户",
     
     // Hero
-    heroTitlePrefix: "依托领先力量将构想转化为现实",
-    heroTitleAccent: "SUPER 5G 与 AI",
-    heroDesc: "IEO - 创新、生态与协同编排 (Innovation Ecosystem and Orchestration) 将物理测试空间、结构化共创生命周期与专利资产发现融为一体，构建量化数字操作系统。",
-    startJourney: "开启创新之旅",
-    discoverFramework: "探索 IEO 架构",
+    heroTitlePrefix: "协同编排与引领",
+    heroTitleAccent: "5G 进阶版与工业应用 AI",
+    heroDesc: "IEO Hub 将 ISO 认证的物理实验舱、确定性边缘计算与企业共创管道深度聚合，打造高标准可量化的数字操作系统。",
+    startJourney: "预约设施使用权限",
+    discoverFramework: "探索阶段门禁试点",
     scrollToExplore: "向下滚动探索",
 
     // About Section

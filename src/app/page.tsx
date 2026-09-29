@@ -140,7 +140,7 @@ export default function HomePage() {
 
         <div className="container max-w-5xl mx-auto space-y-6 relative my-auto">
           {/* Eyebrow Tagline */}
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary uppercase tracking-wider">
             <Sparkles className="h-3.5 w-3.5" />
             <span>{t("tagline")}</span>
           </div>
@@ -152,17 +152,17 @@ export default function HomePage() {
             </span>
           </h1>
 
-          <p className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
+          <p className="max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
             {t("heroDesc")}
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/register">
+            <Link href="/facilities">
               <Button size="lg" variant="gradient" className="w-full sm:w-auto font-semibold px-8 h-12 text-base shadow-xl shadow-blue-500/20">
                 {t("startJourney")} <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
-            <a href="#about">
+            <a href="#journey">
               <Button size="lg" variant="outline" className="w-full sm:w-auto px-8 h-12 text-base border-border">
                 {t("discoverFramework")}
               </Button>
